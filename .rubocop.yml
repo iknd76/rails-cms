@@ -5,6 +5,13 @@ require:
 AllCops:
   NewCops: enable
 
+Layout/LineLength:
+  Max: 240
+
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*.rb
+
 Style/ClassAndModuleChildren:
   EnforcedStyle: nested
 
@@ -13,6 +20,3 @@ Style/Documentation:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
-
-Layout/LineLength:
-  Max: 240

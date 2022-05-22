@@ -1,0 +1,32 @@
+eddard:
+  first_name: Eddard
+  last_name: Stark
+  email: eddard@stark.com
+  time_zone: Alaska
+  password_digest: '$2a$12$UCpbLhcnDVilnnSqlmVam.dMsd/Dm8Kjw4FT/9x30iMIguDu28f4e'
+  token: x5tQEzmNH2uBArp1QRobSYff
+  role: admin
+  created_at: 2022-05-22 13:37:48
+  updated_at: 2022-05-22 13:37:48
+
+katelyn:
+  first_name: Katelyn
+  last_name: Tully
+  email: katelyn@tully.com
+  time_zone: Edinburgh
+  password_digest: '$2a$12$m.FDlpA5nHGswLf3/2Qz8eiEqYvAEO4QZAQgSy2niYEJAXo8iAdSe'
+  token: SciPsJrb1swdVjJ6mb8EVmTY
+  role: standard
+  created_at: 2022-05-22 13:38:17
+  updated_at: 2022-05-22 13:38:17
+
+theon:
+  first_name: Theon
+  last_name: Greyjoy
+  email: theon@greyjoy.com
+  time_zone: Novosibirsk
+  password_digest: '$2a$12$b4l1oNtVYDakptZ9mgerQ.S314HfJ73/JXAAGqriiuulAeLQK5OFS'
+  token: WczKG9GKx1Lzcafof9iswXJp
+  role: banned
+  created_at: 2022-05-22 13:38:49
+  updated_at: 2022-05-22 13:38:49

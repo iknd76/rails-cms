@@ -1,0 +1,15 @@
+<header class="page-header">
+  <h1><%= title "User details" %></h1>
+  <%= link_to "Edit user", edit_admin_user_path(@user), class: "ml-auto" %>
+</header>
+
+<%= show_for @user do |s| %>
+  <%= s.attribute :first_name %>
+  <%= s.attribute :last_name %>
+  <%= s.attribute :email %>
+  <%= s.attribute :time_zone %>
+  <%= s.attribute :token %>
+  <%= s.attribute :role, value: :titleize %>
+  <%= s.attribute :created_at %>
+  <%= s.attribute :updated_at %>
+<% end %>
