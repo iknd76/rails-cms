@@ -2,6 +2,8 @@
 
 module Admin
   class DashboardController < Admin::BaseController
-    def show; end
+    def show
+      authorize(:dashboard)
+    end
   end
 end

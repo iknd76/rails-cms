@@ -1,0 +1,9 @@
+en:
+  admin:
+    users:
+      create:
+        success: 'User was successfully created.'
+      destroy:
+        success: 'User was successfully deleted.'
+      update:
+        success: 'User was successfully updated.'

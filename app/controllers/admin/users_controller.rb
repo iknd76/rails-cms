@@ -2,6 +2,7 @@
 
 module Admin
   class UsersController < Admin::BaseController
+    before_action :authorize_resource_access, only: %i[index new create]
     before_action :set_user, only: %i[show edit update destroy]
 
     def index
@@ -40,12 +41,17 @@ module Admin
 
     private
 
+    def authorize_resource_access
+      authorize(User)
+    end
+
     def set_breadcrumbs
       add_breadcrumb("Users", admin_users_path)
     end
 
     def set_user
       @user = User.find(params[:id])
+      authorize(@user)
       add_breadcrumb(@user.name, admin_user_path(@user))
     end
 
