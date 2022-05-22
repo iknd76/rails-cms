@@ -13,4 +13,14 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, email: true
   validates :time_zone, presence: true, time_zone: true
   validates :role, presence: true
+
+  def self.authenticate(params)
+    user = not_banned.find_by(email: params[:email].to_s.strip.downcase)
+    if user
+      user if user.authenticate(params[:password])
+    else
+      new(password: "timing attack")
+      nil
+    end
+  end
 end

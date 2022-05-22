@@ -2,6 +2,8 @@
 
 module Admin
   class BaseController < ApplicationController
+    include AuthenticateRequest
+    include ExpireIdleSession
     include ManageBreadcrumbs
     layout "admin"
   end

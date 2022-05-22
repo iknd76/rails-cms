@@ -1,32 +1,24 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
+<%= content_tag :tr, id: dom_id(user), class: dom_class(user) do %>
+  <td class="td">
+    <%= link_to user.name, admin_user_path(user), class: "link" %>
+  </td>
+  <td class="td">
     <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Time zone:</strong>
-    <%= user.time_zone %>
-  </p>
-
-  <p>
-    <strong>Token:</strong>
-    <%= user.token %>
-  </p>
-
-  <p>
-    <strong>Role:</strong>
-    <%= user.role %>
-  </p>
-
-</div>
+  </td>
+  <td class="td td-badge">
+    <%= user.role.titleize %>
+  </td>
+  <td class="td td-time">
+    <%= l user.created_at, format: :short %>
+  </td>
+  <td class="td td-actions">
+    <ul class="row-actions">
+      <li>
+        <%= link_to "Edit", edit_admin_user_path(user), class: "link" %>
+      </li>
+      <li>
+        <%= button_to "Delete", admin_user_path(user), method: :delete, class: "link link-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this user?" } } %>
+      </li>
+    </ul>
+  </td>
+<% end %>

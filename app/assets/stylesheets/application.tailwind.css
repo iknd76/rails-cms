@@ -1,12 +1,151 @@
 @tailwind base;
 @tailwind components;
 
+/* Form elements */
+.field {
+  @apply space-y-1;
+}
+
+.field-label {
+  @apply block text-sm font-medium text-stone-900;
+}
+
+.field-input {
+  @apply block w-full sm:text-sm border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+}
+
+.field-input-invalid {
+  @apply border-rose-300 text-rose-900 placeholder-rose-300 focus:ring-rose-500 focus:border-rose-500;
+}
+
+.field-hint {
+  @apply text-sm text-stone-500;
+}
+
+.field-error {
+  @apply text-sm text-rose-600;
+}
+
+.error-notification {
+  @apply py-3 px-4 text-sm font-medium text-rose-700 bg-rose-100 rounded-md;
+}
+
+.fieldset {
+  @apply grid sm:grid-cols-2 gap-4 py-6 border-b border-stone-200;
+}
+
+.form-actions {
+  @apply py-6 flex items-center space-x-4;
+}
+
+/* Buttons */
+.btn {
+  @apply inline-flex items-center px-4 py-2 border sm:text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply border-transparent text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+}
+
+.btn-danger {
+  @apply border-transparent text-white bg-rose-600 hover:bg-rose-700 focus:ring-rose-500;
+}
+
+.btn-primary:disabled,
+.btn-danger:disabled {
+  @apply bg-stone-600 hover:bg-stone-600;
+}
+
+.btn-secondary {
+  @apply border-stone-300 text-stone-700 bg-white hover:bg-stone-50 focus:ring-indigo-500;
+}
+
+.btn-secondary:disabled {
+  @apply text-stone-500;
+}
+
+/* Links */
+.link {
+  @apply font-medium text-indigo-600 hover:text-indigo-900;
+}
+
+.link-danger {
+  @apply text-rose-600 hover:text-rose-900;
+}
+
+/* Layout */
 .page-header {
   @apply flex items-center pb-4 border-b border-stone-200;
 }
 
 .page-header h1 {
   @apply text-4xl font-bold tracking-tight text-stone-900;
+}
+
+/* Index tables */
+.table-index {
+  @apply min-w-full;
+}
+
+.table-index tr {
+  @apply border-b border-stone-200;
+}
+
+.th {
+  @apply p-3 text-sm font-medium text-left text-stone-900;
+}
+
+.th:first-child {
+  @apply pl-0;
+}
+
+.th:last-child {
+  @apply pr-0;
+}
+
+.th-badge,
+.th-time,
+.th-actions {
+  @apply w-32 text-right;
+}
+
+.td {
+  @apply p-3 text-sm;
+}
+
+.td:first-child {
+  @apply pl-0;
+}
+
+.td:last-child {
+  @apply pr-0;
+}
+
+.th-badge,
+.th-time,
+.th-actions {
+  @apply text-right;
+}
+
+.th-time {
+  @apply tabular-nums;
+}
+
+.row-actions {
+  @apply flex items-center justify-end space-x-2;
+}
+
+/* Record details view */
+.dl-item {
+  @apply grid md:grid-cols-3 lg:grid-cols-4 gap-4 border-b border-stone-200;
+}
+
+.dl-label {
+  @apply py-4 text-sm font-medium text-stone-900;
+}
+
+.dl-content {
+  @apply py-4 text-sm;
 }
 
 @tailwind utilities;

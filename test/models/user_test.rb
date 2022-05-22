@@ -51,4 +51,23 @@ class UserTest < ActiveSupport::TestCase
     user.validate
     assert_includes user.errors[:role], "can't be blank"
   end
+
+  test "authenticate with proper credentials" do
+    user = users(:katelyn)
+    assert_equal user, User.authenticate(email: user.email, password: "password")
+  end
+
+  test "authenticate with wrong password" do
+    user = users(:katelyn)
+    assert_nil User.authenticate(email: user.email, password: "wrong-password")
+  end
+
+  test "authenticate with unknown email" do
+    assert_nil User.authenticate(email: "unknown@example.com", password: "password")
+  end
+
+  test "authenticate with banned user" do
+    user = users(:theon)
+    assert_nil User.authenticate(email: user.email, password: "password")
+  end
 end

@@ -4,6 +4,10 @@ require "test_helper"
 
 module Admin
   class UsersControllerTest < ActionDispatch::IntegrationTest
+    setup do
+      log_in users(:eddard)
+    end
+
     test "should get index" do
       get admin_users_url
       assert_response :success
