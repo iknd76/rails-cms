@@ -1,9 +1,16 @@
 <header class="page-header">
   <h1><%= title "Users" %></h1>
-  <%= link_to "New user", new_admin_user_path, class: "ml-auto btn btn-primary" %>
+  <%= link_to "New user", new_admin_user_path, class: "ml-auto btn btn-primary" if policy(User).create? %>
 </header>
 
-<div id="users">
+<%= form_with url: "", method: "get", data: { turbo_frame: "users", turbo_action: "advance", controller: "search" } do |f| %>
+  <div class="flex py-3 space-x-2 border-b border-stone-200">
+    <%= f.search_field :query, placeholder: "Search...", value: params[:query], class: "field-input", data: { action: "input->search#submit" } %>
+    <%= f.collection_select :role, User.roles.keys, :to_s, :titleize, { include_blank: "Role...", selected: params[:role] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "users" do %>
   <table class="table table-index">
     <thead>
       <tr>
@@ -19,4 +26,6 @@
       <%= render @users %>
     </tbody>
   </table>
-</div>
+
+  <%== pagy_nav(@pagy) %>
+<% end %>

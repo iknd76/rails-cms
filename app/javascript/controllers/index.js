@@ -9,3 +9,6 @@ application.register('flash', FlashController)
 
 import HelloController from './hello_controller.js'
 application.register('hello', HelloController)
+
+import SearchController from './search_controller.js'
+application.register('search', SearchController)

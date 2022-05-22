@@ -27,7 +27,7 @@
 }
 
 .error-notification {
-  @apply py-3 px-4 text-sm font-medium text-rose-700 bg-rose-100 rounded-md;
+  @apply py-3 text-sm font-medium text-rose-600 border-b border-stone-200;
 }
 
 .fieldset {
@@ -121,18 +121,35 @@
   @apply pr-0;
 }
 
-.th-badge,
-.th-time,
-.th-actions {
+.td-badge,
+.td-time,
+.td-actions {
   @apply text-right;
 }
 
-.th-time {
+.td-time {
   @apply tabular-nums;
 }
 
 .row-actions {
   @apply flex items-center justify-end space-x-2;
+}
+
+.row-actions li + li {
+  @apply pl-2 border-l border-stone-300;
+}
+
+/* Pagination */
+.pagy-nav {
+  @apply flex items-center justify-center py-4 text-sm space-x-2;
+}
+
+.pagy-nav .disabled {
+  @apply text-stone-500;
+}
+
+.pagy-nav .active {
+  @apply py-0.5 px-3 font-medium text-white bg-indigo-600 rounded-full;
 }
 
 /* Record details view */

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search, against: %i[first_name last_name email], using: { tsearch: { prefix: true } }
   has_person_name
   has_secure_token
   has_secure_password
@@ -22,5 +24,17 @@ class User < ApplicationRecord
       new(password: "timing attack")
       nil
     end
+  end
+
+  def self.matching(term)
+    return all if term.blank?
+
+    search(term)
+  end
+
+  def self.with_role(value)
+    return all if value.blank?
+
+    where(role: value)
   end
 end

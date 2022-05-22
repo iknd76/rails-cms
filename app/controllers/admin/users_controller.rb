@@ -6,7 +6,8 @@ module Admin
     before_action :set_user, only: %i[show edit update destroy]
 
     def index
-      @users = User.all
+      users = User.matching(params[:query]).with_role(params[:role]).order(:first_name, :last_name, :id)
+      @pagy, @users = pagy(users)
     end
 
     def new

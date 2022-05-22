@@ -86,6 +86,7 @@ end
 gem "meta-tags", "~> 2.16"
 gem "name_of_person", "~> 1.1"
 gem "pagy", "~> 5.10"
+gem "pg_search", "~> 2.3"
 gem "pundit", "~> 2.2"
 gem "show_for", "~> 0.8.0"
 gem "simple_form", "~> 5.1"
