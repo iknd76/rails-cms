@@ -1,0 +1,17 @@
+PreCommit:
+  ALL:
+    on_warn: fail
+  BundleAudit:
+    enabled: true
+  BundleOutdated:
+    enabled: true
+  ErbLint:
+    enabled: true
+  EsLint:
+    enabled: true
+    required_executable: "yarn"
+    command: ["yarn", "run", "eslint"]
+  Reek:
+    enabled: true
+  RuboCop:
+    enabled: true
