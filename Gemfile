@@ -64,6 +64,15 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Linting and formatting
+  gem "bundle-audit", "~> 0.1.0"
+  gem "erb_lint", "~> 0.1.1"
+  gem "overcommit", "~> 0.59.1"
+  gem "reek", "~> 6.1"
+  gem "rubocop", "~> 1.29"
+  gem "rubocop-performance", "~> 1.13"
+  gem "rubocop-rails", "~> 2.14"
 end
 
 group :test do
@@ -73,10 +82,5 @@ group :test do
   gem "webdrivers"
 end
 
-gem "bundle-audit", "~> 0.1.0"
-gem "erb_lint", "~> 0.1.1"
-gem "overcommit", "~> 0.59.1"
-gem "reek", "~> 6.1"
-gem "rubocop", "~> 1.29"
-gem "rubocop-performance", "~> 1.13"
-gem "rubocop-rails", "~> 2.14"
+# APP-SPECIFIC GEMS
+gem "meta-tags", "~> 2.16"
