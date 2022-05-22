@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
+
+.page-header {
+  @apply flex items-center pb-4 border-b border-stone-200;
+}
+
+.page-header h1 {
+  @apply text-4xl font-bold tracking-tight text-stone-900;
+}
+
 @tailwind utilities;
