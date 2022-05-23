@@ -1,5 +1,5 @@
 <nav class="flex" aria-label="Breadcrumb">
-  <ol role="list" class="flex items-center space-x-1">
+  <ol role="list" class="flex items-center">
     <li>
       <div>
         <%= link_to root_path, target: "_blank", rel: "noopener", class: "text-stone-700 hover:text-indigo-700" do %>
@@ -16,7 +16,7 @@
         <svg class="flex-shrink-0 h-5 w-5 text-stone-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
           <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
         </svg>
-        <%= link_to "Dashboard", admin_root_path, class: "ml-1 text-sm font-medium text-stone-700 hover:text-indigo-700" %>
+        <%= link_to "Dashboard", admin_root_path, class: "text-sm font-medium text-stone-700 hover:text-indigo-700" %>
       </div>
     </li>
 
@@ -26,7 +26,7 @@
           <svg class="flex-shrink-0 h-5 w-5 text-stone-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
           </svg>
-          <%= link_to breadcrumb.name, breadcrumb.path, class: "ml-1 text-sm font-medium text-stone-700 hover:text-indigo-700" %>
+          <%= link_to breadcrumb.name, breadcrumb.path, class: "text-sm font-medium text-stone-700 hover:text-indigo-700" %>
         </div>
       </li>
     <% end %>

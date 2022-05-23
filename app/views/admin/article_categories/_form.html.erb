@@ -1,0 +1,20 @@
+
+<%= simple_form_for([:admin, @article_category]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.input :name_en %>
+    <%= f.input :name_el %>
+    <%= f.input :slug %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save category" %>
+    <% if article_category.new_record? %>
+      <%= link_to "Cancel", admin_article_categories_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_article_category_path(article_category), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

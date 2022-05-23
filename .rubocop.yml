@@ -8,6 +8,10 @@ AllCops:
 Layout/LineLength:
   Max: 240
 
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*.rb
+
 Metrics/MethodLength:
   Max: 20
   Exclude:

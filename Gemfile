@@ -48,7 +48,7 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -83,6 +83,7 @@ group :test do
 end
 
 # APP-SPECIFIC GEMS
+gem "acts_as_list", "~> 1.0"
 gem "local_time", "~> 2.1"
 gem "meta-tags", "~> 2.16"
 gem "name_of_person", "~> 1.1"
@@ -91,3 +92,4 @@ gem "pg_search", "~> 2.3"
 gem "pundit", "~> 2.2"
 gem "show_for", "~> 0.8.0"
 gem "simple_form", "~> 5.1"
+gem "traco", "~> 5.3"

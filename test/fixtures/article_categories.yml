@@ -1,0 +1,20 @@
+one:
+  slug: one
+  name_en: Category one
+  name_el: Category one
+  position: 1
+  articles_count: 0
+
+two:
+  slug: two
+  name_en: Category two
+  name_el: Category two
+  position: 2
+  articles_count: 0
+
+three:
+  slug: three
+  name_en: Category three
+  name_el: Category three
+  position: 3
+  articles_count: 0

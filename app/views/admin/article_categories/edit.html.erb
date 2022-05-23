@@ -1,0 +1,6 @@
+<header class="page-header">
+  <h1><%= title "Editing category" %></h1>
+  <%= link_to "Show category", admin_article_category_path(@article_category), class: "ml-auto btn btn-primary" %>
+</header>
+
+<%= render "form", article_category: @article_category %>

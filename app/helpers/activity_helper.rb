@@ -5,7 +5,8 @@ module ActivityHelper
     {
       create: "✅",
       update: "✏️",
-      destroy: "⛔️"
+      destroy: "⛔️",
+      sort: "↕️"
     }.fetch(action.to_sym, "❓")
   end
 

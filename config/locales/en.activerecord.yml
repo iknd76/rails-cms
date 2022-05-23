@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    attributes:
+      article_category:
+        name_en: 'English name'
+        name_el: 'Greek name'

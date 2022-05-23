@@ -5,14 +5,25 @@
 <div class="grid sm:grid-cols-3 gap-4">
   <div>
     <div class="py-3 border-b border-stone-200">
+      <h2 class="text-sm font-medium text-stone-900">Content</h2>
+    </div>
+    <ul class="text-sm">
+      <li class="py-3 border-b border-stone-200">
+        🗂 <%= link_to "Article categories", admin_article_categories_path, class: "link" %>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <div class="py-3 border-b border-stone-200">
       <h2 class="text-sm font-medium text-stone-900">Advanced</h2>
     </div>
     <ul class="text-sm">
       <li class="py-3 border-b border-stone-200">
-        <%= link_to "Activities", admin_activities_path, class: "link" %>
+        📓 <%= link_to "Activities", admin_activities_path, class: "link" %>
       </li>
       <li class="py-3 border-b border-stone-200">
-        <%= link_to "Users", admin_users_path, class: "link" %>
+        🧑🏻‍💻 <%= link_to "Users", admin_users_path, class: "link" %>
       </li>
     </ul>
   </div>

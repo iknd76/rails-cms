@@ -171,3 +171,4 @@ strong {
 }
 
 @tailwind utilities;
+@import 'actiontext.css';

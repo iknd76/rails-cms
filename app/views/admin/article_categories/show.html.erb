@@ -1,0 +1,20 @@
+<header class="page-header">
+  <h1><%= title "Category details" %></h1>
+  <%= link_to "Edit category", edit_admin_article_category_path(@article_category), class: "ml-auto btn btn-primary" if policy(@article_category).update? %>
+  <%= button_to "Delete category", admin_article_category_path(@article_category), method: :delete, class: "ml-4 btn btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this category?" } } if policy(@article_category).destroy? %>
+</header>
+
+<%= show_for @article_category do |s| %>
+  <%= s.attribute :slug %>
+  <%= s.attribute :name_en %>
+  <%= s.attribute :name_el %>
+  <%= s.attribute :created_at do %>
+    <%= local_time(@article_category.created_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :updated_at do %>
+    <%= local_time(@article_category.updated_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :history do %>
+    <%= render "admin/activities/history", trackable: @article_category %>
+  <% end %>
+<% end %>

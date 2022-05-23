@@ -4,8 +4,16 @@ en:
       trackable_deleted: '(deleted since)'
       verbs:
         create: 'created'
-        update: 'updated'
         destroy: 'deleted'
+        sort: 'changed the position of'
+        update: 'updated'
+    article_categories:
+      create:
+        success: 'Category was successfully created.'
+      destroy:
+        success: 'Category was successfully deleted.'
+      update:
+        success: 'Category was successfully updated.'
     profiles:
       update:
         success: 'Your profile was successfully updated.'
