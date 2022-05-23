@@ -126,6 +126,7 @@ GEM
     jsbundling-rails (1.0.2)
       railties (>= 6.0.0)
     kwalify (0.7.2)
+    local_time (2.1.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -262,7 +263,7 @@ GEM
     strscan (3.0.3)
     thor (1.2.1)
     timeout (0.2.0)
-    turbo-rails (1.1.0)
+    turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -298,6 +299,7 @@ DEPENDENCIES
   debug
   erb_lint (~> 0.1.1)
   jsbundling-rails
+  local_time (~> 2.1)
   meta-tags (~> 2.16)
   name_of_person (~> 1.1)
   overcommit (~> 0.59.1)

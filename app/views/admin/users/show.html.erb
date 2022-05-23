@@ -11,6 +11,13 @@
   <%= s.attribute :time_zone %>
   <%= s.attribute :token %>
   <%= s.attribute :role, value: :titleize %>
-  <%= s.attribute :created_at %>
-  <%= s.attribute :updated_at %>
+  <%= s.attribute :created_at do %>
+    <%= local_time(@user.created_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :updated_at do %>
+    <%= local_time(@user.updated_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :history do %>
+    <%= render "admin/activities/history", trackable: @user %>
+  <% end %>
 <% end %>

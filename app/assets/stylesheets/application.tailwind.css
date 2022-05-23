@@ -162,7 +162,7 @@
 }
 
 .dl-content {
-  @apply py-4 text-sm;
+  @apply py-4 text-sm md:col-span-2 lg:col-span-3;
 }
 
 @tailwind utilities;

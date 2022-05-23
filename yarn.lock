@@ -800,6 +800,11 @@ lilconfig@^2.0.5:
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.5.tgz#19e57fd06ccc3848fd1891655b5a447092225b25"
   integrity sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==
 
+local-time@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/local-time/-/local-time-2.1.0.tgz#be42f06bf269f9da77cb61ea722aa424dd01d919"
+  integrity sha512-4rB/8EkJIZ8O8Y5q536fSsRbzXOI0cL30l3ZKm4ISPC4D8jYOhRp/MpAaGKAYUvVIqkojT0c7kJk0RlnwtlR2w==
+
 lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"

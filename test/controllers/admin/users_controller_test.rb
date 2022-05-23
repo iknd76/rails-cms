@@ -19,15 +19,24 @@ module Admin
     end
 
     test "should create user" do
-      assert_difference("User.count") do
-        post admin_users_url, params: { user: user_params }
+      assert_difference("Activity.count") do
+        assert_difference("User.count") do
+          post admin_users_url, params: { user: user_params }
+        end
       end
-      assert_redirected_to admin_user_url(User.last)
+      user = User.last
+      assert_redirected_to admin_user_url(user)
+
+      activity = Activity.last
+      assert_equal user, activity.trackable
+      assert_equal "create", activity.action
     end
 
     test "should not create user with invalid params" do
-      assert_no_difference("User.count") do
-        post admin_users_url, params: { user: user_params(email: "not-an-email") }
+      assert_no_difference("Activity.count") do
+        assert_no_difference("User.count") do
+          post admin_users_url, params: { user: user_params(email: "not-an-email") }
+        end
       end
       assert_response :unprocessable_entity
     end
@@ -46,22 +55,38 @@ module Admin
 
     test "should update user" do
       user = users(:theon)
-      patch admin_user_url(user), params: { user: user_params }
+      assert_difference("Activity.count") do
+        patch admin_user_url(user), params: { user: user_params }
+      end
       assert_redirected_to admin_user_url(user)
+
+      activity = Activity.last
+      assert_equal user, activity.trackable
+      assert_equal "update", activity.action
     end
 
     test "should not update user with invalid params" do
       user = users(:theon)
-      patch admin_user_url(user), params: { user: user_params(email: "not-an-email") }
+      assert_no_difference("Activity.count") do
+        patch admin_user_url(user), params: { user: user_params(email: "not-an-email") }
+      end
       assert_response :unprocessable_entity
     end
 
     test "should destroy user" do
       user = users(:theon)
-      assert_difference("User.count", -1) do
-        delete admin_user_url(user)
+      assert_difference("Activity.count") do
+        assert_difference("User.count", -1) do
+          delete admin_user_url(user)
+        end
       end
       assert_redirected_to admin_users_url
+
+      activity = Activity.last
+      assert_equal user.id, activity.trackable_id
+      assert_equal "User", activity.trackable_type
+      assert_equal "Theon Greyjoy", activity.trackable_name
+      assert_equal "destroy", activity.action
     end
 
     private

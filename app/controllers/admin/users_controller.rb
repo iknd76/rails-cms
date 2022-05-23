@@ -17,6 +17,7 @@ module Admin
     def create
       @user = User.new(user_params)
       if @user.save
+        track_activity @user
         redirect_to admin_user_url(@user), notice: t(".success")
       else
         render :new, status: :unprocessable_entity
@@ -29,6 +30,7 @@ module Admin
 
     def update
       if @user.update(user_params)
+        track_activity @user
         redirect_to admin_user_url(@user), notice: t(".success")
       else
         render :edit, status: :unprocessable_entity
@@ -37,6 +39,7 @@ module Admin
 
     def destroy
       @user.destroy
+      track_activity @user
       redirect_to admin_users_url, notice: t(".success")
     end
 

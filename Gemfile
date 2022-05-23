@@ -90,3 +90,5 @@ gem "pg_search", "~> 2.3"
 gem "pundit", "~> 2.2"
 gem "show_for", "~> 0.8.0"
 gem "simple_form", "~> 5.1"
+
+gem "local_time", "~> 2.1"

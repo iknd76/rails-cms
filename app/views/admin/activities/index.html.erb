@@ -1,0 +1,18 @@
+<header class="page-header">
+  <h1><%= title "Activities" %></h1>
+</header>
+
+<%= form_with url: "", method: "get", data: { turbo_frame: "activities", turbo_action: "advance", controller: "search" } do |f| %>
+  <div class="flex py-3 space-x-2 border-b border-stone-200">
+    <%= f.search_field :query, placeholder: "Search...", value: params[:query], class: "field-input", data: { action: "input->search#submit" } %>
+    <%= f.collection_select :user_id, User.order(:first_name, :last_name, :id), :id, :name, { include_blank: "User...", selected: params[:user_id] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "activities" do %>
+  <ul>
+    <%= render @activities %>
+  </ul>
+
+  <%== pagy_nav(@pagy) %>
+<% end %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/logout", to: "auth/sessions#destroy", as: "logout"
 
   namespace :admin do
+    resources :activities, only: [:index]
     resources :users
     root "dashboard#show"
   end

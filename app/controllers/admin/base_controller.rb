@@ -5,6 +5,7 @@ module Admin
     include AuthenticateRequest
     include ExpireIdleSession
     include AuthorizeAction
+    include TrackActivity
     include ManageBreadcrumbs
     layout "admin"
   end

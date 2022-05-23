@@ -1,5 +1,11 @@
 en:
   admin:
+    activities:
+      trackable_deleted: '(deleted since)'
+      verbs:
+        create: 'created'
+        update: 'updated'
+        destroy: 'deleted'
     users:
       create:
         success: 'User was successfully created.'
