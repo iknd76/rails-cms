@@ -6,10 +6,16 @@
 
 <%= show_for @article do |s| %>
   <%= s.attribute :title %>
-  <%= s.attribute :body %>
+  <%= s.attribute :body do %>
+    <div class="prose prose-stone prose-sm">
+      <%= markdown(@article.body) %>
+    </div>
+  <% end %>
   <%= s.association :article_category %>
-  <%= s.attribute :locale %>
-  <%= s.attribute :status %>
+  <%= s.attribute :locale do %>
+    <%= t("locales.#{@article.locale}") %>
+  <% end %>
+  <%= s.attribute :status, value: :titleize %>
   <%= s.attribute :published_on %>
   <%= s.attribute :created_at do %>
     <%= local_time(@article.created_at, format: :long) %>

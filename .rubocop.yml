@@ -25,3 +25,7 @@ Style/Documentation:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Rails/OutputSafety:
+  Exclude:
+    - app/helpers/markdown_helper.rb

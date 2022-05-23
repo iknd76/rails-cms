@@ -6,6 +6,7 @@
     "@hotwired/turbo-rails": "^7.1.1",
     "@rails/request.js": "^0.0.6",
     "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.7",
     "esbuild": "^0.14.39",
     "local-time": "^2.1.0",
