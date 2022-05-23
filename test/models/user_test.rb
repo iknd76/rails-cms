@@ -70,4 +70,29 @@ class UserTest < ActiveSupport::TestCase
     user = users(:theon)
     assert_nil User.authenticate(email: user.email, password: "password")
   end
+
+  test "update with password" do
+    user = users(:katelyn)
+    assert user.update_with_password(email: "kat@stark.com", current_password: "password")
+  end
+
+  test "update with password and change password regenerates token" do
+    user = users(:katelyn)
+    original_token = user.token
+    assert user.update_with_password(password: "new-password", password_confirmation: "new-password", current_password: "password")
+    assert_not_equal original_token, user.token
+  end
+
+  test "update with wrong password" do
+    user = users(:katelyn)
+    assert_not user.update_with_password(email: "kat@stark.com", current_password: "wrong-password")
+    assert_includes user.errors[:current_password], "is invalid"
+  end
+
+  test "update with wrong password and other validation errors" do
+    user = users(:katelyn)
+    assert_not user.update_with_password(email: "", current_password: "wrong-password")
+    assert_includes user.errors[:email], "can't be blank"
+    assert_includes user.errors[:current_password], "is invalid"
+  end
 end

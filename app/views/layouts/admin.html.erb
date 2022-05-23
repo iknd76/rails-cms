@@ -14,7 +14,10 @@
     <%= render "admin/shared/flash" %>
 
     <main class="w-full max-w-4xl p-4 sm:p-8 bg-white ring-1 ring-stone-200 rounded-lg shadow-sm">
-      <%= render "admin/shared/breadcrumbs" %>
+      <div class="flex items-center justify-between mb-4">
+        <%= render "admin/shared/breadcrumbs" %>
+        <%= render "admin/shared/current_user" %>
+      </div>
       <%= yield %>
     </main>
   </body>

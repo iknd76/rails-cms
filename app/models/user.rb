@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_person_name
   has_secure_token
   has_secure_password
+  attr_accessor :current_password
+
   enum role: { banned: -1, standard: 0, admin: 1 }
 
   has_many :activities, dependent: :destroy
@@ -28,6 +30,25 @@ class User < ApplicationRecord
     else
       new(password: "timing attack")
       nil
+    end
+  end
+
+  def update_with_password(params)
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    else
+      params[:token] = User.generate_unique_secure_token
+    end
+
+    current_password = params.delete(:current_password)
+    if authenticate(current_password)
+      update(params)
+    else
+      assign_attributes(params)
+      validate
+      errors.add(:current_password, :invalid)
+      false
     end
   end
 

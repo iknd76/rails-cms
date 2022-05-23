@@ -6,6 +6,9 @@ en:
         create: 'created'
         update: 'updated'
         destroy: 'deleted'
+    profiles:
+      update:
+        success: 'Your profile was successfully updated.'
     users:
       create:
         success: 'User was successfully created.'

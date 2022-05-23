@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 
+/* Typograpghy */
+strong {
+  @apply font-medium text-stone-900;
+}
+
 /* Form elements */
 .field {
   @apply space-y-1;
