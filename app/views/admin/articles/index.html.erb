@@ -1,0 +1,33 @@
+<header class="page-header">
+  <h1><%= title "Articles" %></h1>
+  <%= link_to "New article", new_admin_article_path, class: "ml-auto btn btn-primary" if policy(Article).create? %>
+</header>
+
+<%= form_with url: "", method: "get", data: { turbo_frame: "articles", turbo_action: "advance", controller: "search" } do |f| %>
+  <div class="flex py-3 space-x-2 border-b border-stone-200">
+    <%= f.search_field :query, placeholder: "Search...", value: params[:query], class: "field-input", data: { action: "input->search#submit" } %>
+    <%= f.collection_select :status, Article.statuses.keys, :to_s, :titleize, { include_blank: "Status...", selected: params[:status] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
+    <%= f.select :locale, [%w[English en], %w[Greek el]], { include_blank: "Locale...", selected: params[:locale] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "articles" do %>
+  <table class="table table-index">
+    <thead>
+      <tr>
+        <th class="th">Title</th>
+        <th class="th">Category</th>
+        <th class="th th-badge">Locale</th>
+        <th class="th th-badge">Status</th>
+        <th class="th th-time">Created</th>
+        <th class="th th-actions">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @articles %>
+    </tbody>
+  </table>
+
+  <%== pagy_nav(@pagy) %>
+<% end %>

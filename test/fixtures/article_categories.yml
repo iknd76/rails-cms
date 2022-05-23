@@ -3,14 +3,14 @@ one:
   name_en: Category one
   name_el: Category one
   position: 1
-  articles_count: 0
+  articles_count: 2
 
 two:
   slug: two
   name_en: Category two
   name_el: Category two
   position: 2
-  articles_count: 0
+  articles_count: 1
 
 three:
   slug: three

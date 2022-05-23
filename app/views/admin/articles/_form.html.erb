@@ -1,0 +1,23 @@
+
+<%= simple_form_for([:admin, article]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.association :article_category %>
+    <%= f.input :locale, collection: [%w[English en], %w[Greek el]] %>
+    <%= f.input :title, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body, wrapper_html: { class: "col-span-2" }, input_html: { data: { controller: "rich-editor" } } %>
+    <%= f.input :status, collection: Article.statuses.keys, label_method: :titleize %>
+    <%= f.input :published_on %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save article" %>
+    <% if article.new_record? %>
+      <%= link_to "Cancel", admin_articles_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_article_path(article), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

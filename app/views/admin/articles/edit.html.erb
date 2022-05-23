@@ -1,0 +1,6 @@
+<header class="page-header">
+  <h1><%= title "Editing article" %></h1>
+  <%= link_to "Show article", admin_article_path(@article), class: "ml-auto btn btn-primary" %>
+</header>
+
+<%= render "form", article: @article %>

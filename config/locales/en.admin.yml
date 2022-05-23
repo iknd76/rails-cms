@@ -14,6 +14,13 @@ en:
         success: 'Category was successfully deleted.'
       update:
         success: 'Category was successfully updated.'
+    articles:
+      create:
+        success: 'Article was successfully created.'
+      destroy:
+        success: 'Article was successfully deleted.'
+      update:
+        success: 'Article was successfully updated.'
     profiles:
       update:
         success: 'Your profile was successfully updated.'
