@@ -6,6 +6,7 @@
 <%= form_with url: "", method: "get", data: { turbo_frame: "articles", turbo_action: "advance", controller: "search" } do |f| %>
   <div class="flex py-3 space-x-2 border-b border-stone-200">
     <%= f.search_field :query, placeholder: "Search...", value: params[:query], class: "field-input", data: { action: "input->search#submit" } %>
+    <%= f.collection_select :category_id, ArticleCategory.order(:position), :id, :name, { include_blank: "Category...", selected: params[:category_id] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
     <%= f.collection_select :status, Article.statuses.keys, :to_s, :titleize, { include_blank: "Status...", selected: params[:status] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
     <%= f.select :locale, [%w[English en], %w[Greek el]], { include_blank: "Locale...", selected: params[:locale] }, class: "w-auto field-input", data: { action: "change->search#submit" } %>
   </div>

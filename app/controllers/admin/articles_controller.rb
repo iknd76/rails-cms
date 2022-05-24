@@ -6,7 +6,12 @@ module Admin
     before_action :set_article, only: %i[show edit update destroy]
 
     def index
-      articles = Article.matching(params[:query]).with_status(params[:status]).in_locale(params[:locale]).order(id: :desc)
+      articles = Article.
+                 matching(params[:query]).
+                 in_category(params[:category_id]).
+                 with_status(params[:status]).
+                 in_locale(params[:locale]).
+                 order(id: :desc)
       @pagy, @articles = pagy(articles)
     end
 

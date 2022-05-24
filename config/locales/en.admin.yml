@@ -5,7 +5,7 @@ en:
       verbs:
         create: 'created'
         destroy: 'deleted'
-        sort: 'changed the position of'
+        sort: 'reordered'
         update: 'updated'
     article_categories:
       create:

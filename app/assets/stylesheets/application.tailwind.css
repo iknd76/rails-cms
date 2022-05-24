@@ -146,7 +146,7 @@ strong {
 
 /* Pagination */
 .pagy-nav {
-  @apply flex items-center justify-center py-4 text-sm space-x-2;
+  @apply flex items-center justify-center py-6 text-sm space-x-2;
 }
 
 .pagy-nav .disabled {

@@ -14,6 +14,7 @@ class Article < ApplicationRecord
   validates :status, presence: true
 
   scope :matching, ->(term) { search(term) if term.present? }
+  scope :in_category, ->(id) { where(article_category_id: id) if id.present? }
   scope :with_status, ->(value) { where(status: value) if value.present? }
   scope :in_locale, ->(value) { where(locale: value) if value.present? }
 

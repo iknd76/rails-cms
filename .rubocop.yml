@@ -5,6 +5,9 @@ require:
 AllCops:
   NewCops: enable
 
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
 Layout/LineLength:
   Max: 240
 

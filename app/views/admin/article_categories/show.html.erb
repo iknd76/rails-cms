@@ -8,6 +8,13 @@
   <%= s.attribute :slug %>
   <%= s.attribute :name_en %>
   <%= s.attribute :name_el %>
+  <%= s.attribute :articles do %>
+    <% if @article_category.articles_count.zero? %>
+      <span>No articles associated with this category.</span>
+    <% else %>
+      <%= link_to pluralize(@article_category.articles_count, "article"), admin_articles_path(category_id: @article_category.id), class: "link" %>
+    <% end %>
+  <% end %>
   <%= s.attribute :created_at do %>
     <%= local_time(@article_category.created_at, format: :long) %>
   <% end %>

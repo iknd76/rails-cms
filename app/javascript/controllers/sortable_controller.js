@@ -17,7 +17,6 @@ export default class extends Controller {
           onEnd: this.onEnd.bind(this),
           chosenClass: 'bg-stone-50',
           dragClass: 'bg-white',
-          handle: '.handle',
         })
       )
     })
