@@ -11,21 +11,35 @@
 <% end %>
 
 <%= turbo_frame_tag "users" do %>
-  <table class="table table-index">
-    <thead>
-      <tr>
-        <th class="th">Name</th>
-        <th class="th">Email</th>
-        <th class="th th-badge">Role</th>
-        <th class="th th-time">Created</th>
-        <th class="th th-actions">Actions</th>
-      </tr>
-    </thead>
+  <% if @pagy.count.zero? %>
+    <div class="my-4 h-32 flex flex-col items-center justify-center border-4 border-dashed rounded-md border-stone-300">
+      <p class="text-sm text-stone-500">
+        No users were found.
+        <%= link_to new_admin_user_path, class: "inline-flex link", data: { turbo_frame: "_top" } do %>
+          <span>Add a new one</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        <% end if policy(User).create? %>
+      </p>
+    </div>
+  <% else %>
+    <table class="table table-index">
+      <thead>
+        <tr>
+          <th class="th">Name</th>
+          <th class="th">Email</th>
+          <th class="th th-badge">Role</th>
+          <th class="th th-time">Created</th>
+          <th class="th th-actions">Actions</th>
+        </tr>
+      </thead>
 
-    <tbody>
-      <%= render @users %>
-    </tbody>
-  </table>
+      <tbody>
+        <%= render @users %>
+      </tbody>
+    </table>
 
-  <%== pagy_nav(@pagy) %>
+    <%== pagy_nav(@pagy) %>
+  <% end %>
 <% end %>

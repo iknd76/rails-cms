@@ -10,9 +10,17 @@
 <% end %>
 
 <%= turbo_frame_tag "activities" do %>
-  <ul>
-    <%= render @activities %>
-  </ul>
+  <% if @pagy.count.zero? %>
+    <div class="my-4 h-32 flex flex-col items-center justify-center border-4 border-dashed rounded-md border-stone-300">
+      <p class="text-sm text-stone-500">
+        No activities matched the set criteria.
+      </p>
+    </div>
+  <% else %>
+    <ul>
+      <%= render @activities %>
+    </ul>
 
-  <%== pagy_nav(@pagy) %>
+    <%== pagy_nav(@pagy) %>
+  <% end %>
 <% end %>
