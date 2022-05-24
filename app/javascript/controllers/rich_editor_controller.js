@@ -7,6 +7,8 @@ export default class extends Controller {
     this.editor = new SimpleMDE({
       element: this.element,
       spellChecker: false,
+      status: false,
+      hideIcons: ['preview', 'side-by-side'],
     })
   }
 
