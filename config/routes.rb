@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/logout", to: "auth/sessions#destroy", as: "logout"
 
   namespace :admin do
+    resources :pages
     resources :snippets
     resources :articles
     resources :article_categories

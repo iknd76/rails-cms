@@ -21,6 +21,13 @@ en:
         success: 'Article was successfully deleted.'
       update:
         success: 'Article was successfully updated.'
+    pages:
+      create:
+        success: 'Page was successfully created.'
+      destroy:
+        success: 'Page was successfully deleted.'
+      update:
+        success: 'Page was successfully updated.'
     profiles:
       update:
         success: 'Your profile was successfully updated.'

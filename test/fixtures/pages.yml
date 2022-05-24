@@ -1,0 +1,21 @@
+one:
+  slug: one
+  title_en: MyString
+  title_el: MyString
+  body_en: MyText
+  body_el: MyText
+  description_en: MyText
+  description_el: MyText
+  keywords_en: MyText
+  keywords_el: MyText
+
+two:
+  slug: two
+  title_en: MyString
+  title_el: MyString
+  body_en: MyText
+  body_el: MyText
+  description_en: MyText
+  description_el: MyText
+  keywords_en: MyText
+  keywords_el: MyText

@@ -18,3 +18,6 @@ application.register('search', SearchController)
 
 import SortableController from './sortable_controller.js'
 application.register('sortable', SortableController)
+
+import TextareaAutogrow from 'stimulus-textarea-autogrow'
+application.register('textarea-autogrow', TextareaAutogrow)

@@ -73,6 +73,9 @@ group :development do
   gem "rubocop", "~> 1.29"
   gem "rubocop-performance", "~> 1.13"
   gem "rubocop-rails", "~> 2.14"
+
+  # Dummy data generator
+  gem "faker", "~> 2.21"
 end
 
 group :test do
@@ -94,5 +97,3 @@ gem "redcarpet", "~> 3.5"
 gem "show_for", "~> 0.8.0"
 gem "simple_form", "~> 5.1"
 gem "traco", "~> 5.3"
-
-gem "faker", "~> 2.21"

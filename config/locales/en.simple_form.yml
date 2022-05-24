@@ -22,6 +22,11 @@ en:
     hints:
       defaults:
         slug: 'Only lowercase english characters and dashes'
+      page:
+        description_el: 'Short description of the content, up to 300 characters'
+        description_en: 'Short description of the content, up to 300 characters'
+        keywords_el: 'Key terms separated by commas, up to 255 characters or 20 words'
+        keywords_en: 'Key terms separated by commas, up to 255 characters or 20 words'
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'
