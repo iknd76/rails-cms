@@ -1,0 +1,6 @@
+<header class="page-header">
+  <h1><%= title "Editing snippet" %></h1>
+  <%= link_to "Show snippet", admin_snippet_path(@snippet), class: "ml-auto btn btn-primary" %>
+</header>
+
+<%= render "form", snippet: @snippet %>

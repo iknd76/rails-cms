@@ -94,3 +94,5 @@ gem "redcarpet", "~> 3.5"
 gem "show_for", "~> 0.8.0"
 gem "simple_form", "~> 5.1"
 gem "traco", "~> 5.3"
+
+gem "faker", "~> 2.21"

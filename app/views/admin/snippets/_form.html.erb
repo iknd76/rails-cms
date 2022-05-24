@@ -1,0 +1,21 @@
+<%= simple_form_for([:admin, snippet]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.input :slug %>
+    <%= f.input :title_en, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_en, wrapper: :rich_editor %>
+    <%= f.input :title_el, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_el, wrapper: :rich_editor %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save snippet" %>
+    <% if snippet.new_record? %>
+      <%= link_to "Cancel", admin_snippets_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_snippet_path(snippet), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

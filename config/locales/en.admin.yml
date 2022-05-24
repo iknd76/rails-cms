@@ -24,6 +24,13 @@ en:
     profiles:
       update:
         success: 'Your profile was successfully updated.'
+    snippets:
+      create:
+        success: 'Snippet was successfully created.'
+      destroy:
+        success: 'Snippet was successfully deleted.'
+      update:
+        success: 'Snippet was successfully updated.'
     users:
       create:
         success: 'User was successfully created.'
