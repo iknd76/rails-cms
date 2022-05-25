@@ -7,6 +7,7 @@ en:
         destroy: 'deleted'
         sort: 'reordered'
         update: 'updated'
+
     article_categories:
       create:
         success: 'Category was successfully created.'
@@ -14,6 +15,7 @@ en:
         success: 'Category was successfully deleted.'
       update:
         success: 'Category was successfully updated.'
+
     articles:
       create:
         success: 'Article was successfully created.'
@@ -21,6 +23,7 @@ en:
         success: 'Article was successfully deleted.'
       update:
         success: 'Article was successfully updated.'
+
     pages:
       create:
         success: 'Page was successfully created.'
@@ -28,9 +31,19 @@ en:
         success: 'Page was successfully deleted.'
       update:
         success: 'Page was successfully updated.'
+
+    product_categories:
+      create:
+        success: 'Category was successfully created.'
+      destroy:
+        success: 'Category was successfully deleted.'
+      update:
+        success: 'Category was successfully updated.'
+
     profiles:
       update:
         success: 'Your profile was successfully updated.'
+
     snippets:
       create:
         success: 'Snippet was successfully created.'
@@ -38,6 +51,7 @@ en:
         success: 'Snippet was successfully deleted.'
       update:
         success: 'Snippet was successfully updated.'
+
     users:
       create:
         success: 'User was successfully created.'

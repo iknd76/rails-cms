@@ -1,0 +1,24 @@
+
+<%= simple_form_for([:admin, @product_category]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.input :slug %>
+    <%= f.input :parent_id, collection: @parent_categories, disabled: @product_category.children.any? %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :name_en %>
+    <%= f.input :name_el %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save category" %>
+    <% if product_category.new_record? %>
+      <%= link_to "Cancel", admin_product_categories_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_product_category_path(product_category), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

@@ -27,6 +27,8 @@ en:
         description_en: 'Short description of the content, up to 300 characters'
         keywords_el: 'Key terms separated by commas, up to 255 characters or 20 words'
         keywords_en: 'Key terms separated by commas, up to 255 characters or 20 words'
+      product_category:
+        parent_id: 'Leave this field blank to create a new top-level category'
     # include_blanks:
     #   defaults:
     #     age: 'Rather not say'

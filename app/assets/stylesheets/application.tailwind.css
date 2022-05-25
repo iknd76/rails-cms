@@ -2,6 +2,12 @@
 @tailwind components;
 
 /* Typograpghy */
+h1,
+h2,
+h3 {
+  @apply text-stone-900;
+}
+
 strong {
   @apply font-medium text-stone-900;
 }
@@ -13,6 +19,10 @@ strong {
 
 .field-input {
   @apply block w-full sm:text-sm border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+}
+
+.field-input:disabled {
+  @apply bg-stone-100;
 }
 
 .field-input.date {
@@ -171,7 +181,7 @@ strong {
 }
 
 .dl-content.blank {
-  @apply text-stone-500;
+  @apply text-stone-500 italic;
 }
 
 /* Rich text editor */

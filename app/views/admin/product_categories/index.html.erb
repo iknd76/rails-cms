@@ -1,0 +1,10 @@
+<header class="page-header">
+  <h1><%= title "Product categories" %></h1>
+  <%= link_to "New category", new_admin_product_category_path, class: "ml-auto btn btn-primary" if policy(ProductCategory).create? %>
+</header>
+
+<div data-controller="sortable" data-sortable-url-value="<%= admin_sortables_path %>">
+  <ul data-sortable-target="list">
+    <%= render @product_categories %>
+  </ul>
+</div>

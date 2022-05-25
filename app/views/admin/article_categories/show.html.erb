@@ -10,7 +10,7 @@
   <%= s.attribute :name_el %>
   <%= s.attribute :articles do %>
     <% if @article_category.articles_count.zero? %>
-      <span>No articles associated with this category.</span>
+      <span class="text-stone-500 italic">No articles associated with this category.</span>
     <% else %>
       <%= link_to pluralize(@article_category.articles_count, "article"), admin_articles_path(category_id: @article_category.id), class: "link" %>
     <% end %>

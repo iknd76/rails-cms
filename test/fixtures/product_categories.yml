@@ -1,0 +1,52 @@
+one:
+  slug: one
+  name_en: Category One
+  name_el: Category One
+  position: 1
+
+one_a:
+  slug: one-a
+  name_en: Category One A
+  name_el: Category One A
+  parent: one
+  position: 1
+
+one_b:
+  slug: one-b
+  name_en: Category One B
+  name_el: Category One B
+  parent: one
+  position: 2
+
+one_c:
+  slug: one-c
+  name_en: Category One C
+  name_el: Category One C
+  parent: one
+  position: 3
+
+two:
+  slug: two
+  name_en: Category two
+  name_el: Category two
+  position: 2
+
+two_a:
+  slug: two-a
+  name_en: Category Two A
+  name_el: Category Two A
+  parent: two
+  position: 1
+
+two_b:
+  slug: two-b
+  name_en: Category Two B
+  name_el: Category Two B
+  parent: two
+  position: 2
+
+three:
+  slug: three
+  name_en: Category Three
+  name_el: Category Three
+  position: 3

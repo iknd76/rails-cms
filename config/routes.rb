@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :snippets
     resources :articles
     resources :article_categories
+    resources :product_categories
     resources :activities, only: %i[index]
     resources :users
     resources :sortables, only: %i[create]
