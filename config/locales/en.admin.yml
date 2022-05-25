@@ -52,6 +52,14 @@ en:
       update:
         success: 'Snippet was successfully updated.'
 
+    suppliers:
+      create:
+        success: 'Supplier was successfully created.'
+      destroy:
+        success: 'Supplier was successfully deleted.'
+      update:
+        success: 'Supplier was successfully updated.'
+
     users:
       create:
         success: 'User was successfully created.'

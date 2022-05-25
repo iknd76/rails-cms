@@ -274,7 +274,7 @@ GEM
       railties (>= 6.0.0)
     strscan (3.0.3)
     thor (1.2.1)
-    timeout (0.2.0)
+    timeout (0.3.0)
     traco (5.3.3)
       activerecord (>= 4.2)
     turbo-rails (1.1.1)

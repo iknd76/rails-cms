@@ -18,8 +18,17 @@ end
 
 module ActionDispatch
   class IntegrationTest
+    parallelize_setup do |instance|
+      ActiveStorage::Blob.service.root = "#{ActiveStorage::Blob.service.root}-#{instance}"
+    end
+
     def log_in(user)
       post login_url, params: { session: { email: user.email, password: "password" } }
+    end
+
+    def after_teardown
+      super
+      FileUtils.rm_rf(ActiveStorage::Blob.service.root)
     end
   end
 end

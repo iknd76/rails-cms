@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Wuckert-Conn
+  website: https://www.wuckert-conn.com
+  products_count: 0
+
+two:
+  name: Heller, Pfannerstill and Considine
+  website: https://www.hpc.ch
+  products_count: 0

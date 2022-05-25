@@ -1,0 +1,19 @@
+<%= simple_form_for([:admin, supplier]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.input :name %>
+    <%= f.input :website %>
+    <%= f.input :logo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save supplier" %>
+    <% if supplier.new_record? %>
+      <%= link_to "Cancel", admin_suppliers_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_supplier_path(supplier), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

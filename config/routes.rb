@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :pages
     resources :snippets
-    resources :articles
     resources :article_categories
+    resources :articles
     resources :product_categories
+    resources :suppliers
     resources :activities, only: %i[index]
     resources :users
     resources :sortables, only: %i[create]
