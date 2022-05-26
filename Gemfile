@@ -76,6 +76,9 @@ group :development do
 
   # Dummy data generator
   gem "faker", "~> 2.21"
+
+  # Terminal progress bars
+  gem "ruby-progressbar", "~> 1.11"
 end
 
 group :test do
