@@ -23,7 +23,9 @@
   <%= s.attribute :supplier do %>
     <%= link_to @product.supplier, admin_supplier_path(@product.supplier), class: "link" %>
   <% end %>
-  <%= s.attribute :status, value: :titleize %>
+  <%= s.attribute :status do %>
+    <%= badge_for @product.status %>
+  <% end %>
   <%= s.attribute :published_on %>
   <%= s.attribute :created_at do %>
     <%= local_time(@product.created_at, format: :long) %>

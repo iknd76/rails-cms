@@ -15,6 +15,9 @@ directories:
       enabled: false
     InstanceVariableAssumption:
       enabled: false
+  'app/helpers':
+    FeatureEnvy:
+      enabled: false
   'app/mailers':
     InstanceVariableAssumption:
       enabled: false

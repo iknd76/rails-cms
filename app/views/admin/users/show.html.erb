@@ -10,7 +10,9 @@
   <%= s.attribute :email %>
   <%= s.attribute :time_zone %>
   <%= s.attribute :token %>
-  <%= s.attribute :role, value: :titleize %>
+  <%= s.attribute :role do %>
+    <%= badge_for @user.role %>
+  <% end %>
   <%= s.attribute :created_at do %>
     <%= local_time(@user.created_at, format: :long) %>
   <% end %>

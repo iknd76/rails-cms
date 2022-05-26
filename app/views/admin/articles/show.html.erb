@@ -17,7 +17,9 @@
   <%= s.attribute :locale do %>
     <%= t("locales.#{@article.locale}") %>
   <% end %>
-  <%= s.attribute :status, value: :titleize %>
+  <%= s.attribute :status do %>
+    <%= badge_for @article.status %>
+  <% end %>
   <%= s.attribute :published_on %>
   <%= s.attribute :created_at do %>
     <%= local_time(@article.created_at, format: :long) %>

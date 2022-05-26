@@ -6,10 +6,10 @@
     <%= article.article_category %>
   </td>
   <td class="td td-badge">
-    <%= t("locales.#{article.locale}") %>
+    <%= t "locales.#{article.locale}" %>
   </td>
   <td class="td td-badge">
-    <%= article.status.titleize %>
+    <%= badge_for article.status %>
   </td>
   <td class="td td-time">
     <%= l article.created_at, format: :short %>

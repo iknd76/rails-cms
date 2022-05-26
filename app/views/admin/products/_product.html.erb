@@ -9,7 +9,7 @@
     <%= product.supplier %>
   </td>
   <td class="td td-badge">
-    <%= product.status.titleize %>
+    <%= badge_for product.status %>
   </td>
   <td class="td td-time">
     <%= l product.created_at, format: :short %>

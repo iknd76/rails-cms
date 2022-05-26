@@ -6,7 +6,7 @@
     <%= user.email %>
   </td>
   <td class="td td-badge">
-    <%= user.role.titleize %>
+    <%= badge_for user.role %>
   </td>
   <td class="td td-time">
     <%= l user.created_at, format: :short %>

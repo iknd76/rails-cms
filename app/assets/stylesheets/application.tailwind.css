@@ -197,4 +197,22 @@ strong {
   @apply border-0 border-b border-stone-200 rounded-t-md;
 }
 
+/* Badges */
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs leading-none font-medium bg-stone-100 text-stone-900;
+}
+
+.badge-published,
+.badge-standard {
+  @apply bg-green-100 text-green-900;
+}
+
+.badge-banned {
+  @apply bg-rose-100 text-rose-900;
+}
+
+.badge-admin {
+  @apply bg-indigo-100 text-indigo-900;
+}
+
 @tailwind utilities;
