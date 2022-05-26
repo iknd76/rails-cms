@@ -13,6 +13,11 @@ en:
         keywords_el: 'Greek keywords'
         body_en: 'English body'
         body_el: 'Greek body'
+      product:
+        title_en: 'English title'
+        title_el: 'Greek title'
+        body_en: 'English body'
+        body_el: 'Greek body'
       product_category:
         name_en: 'English name'
         name_el: 'Greek name'
@@ -25,6 +30,10 @@ en:
 
     errors:
       models:
+        product:
+          attributes:
+            product_category:
+              root: 'must not be a top-level category'
         product_category:
           attributes:
             parent_id:

@@ -3,6 +3,7 @@
 class ProductCategory < ApplicationRecord
   belongs_to :parent, class_name: "ProductCategory", optional: true
   has_many :children, -> { order(:position) }, class_name: "ProductCategory", foreign_key: :parent_id, dependent: :nullify, inverse_of: :parent
+  has_many :products, dependent: :destroy
   acts_as_list scope: :parent
   translates :name
 
@@ -17,8 +18,8 @@ class ProductCategory < ApplicationRecord
     parent_id.blank?
   end
 
-  def child?
-    !root?
+  def leaf?
+    parent_id.present?
   end
 
   def to_s
@@ -32,7 +33,7 @@ class ProductCategory < ApplicationRecord
 
     if parent == self
       errors.add(:parent_id, :not_self)
-    elsif parent.child?
+    elsif parent.leaf?
       errors.add(:parent_id, :not_root)
     elsif children.any?
       errors.add(:parent_id, :assigned_children)

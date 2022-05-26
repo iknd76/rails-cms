@@ -1,0 +1,34 @@
+
+<%= simple_form_for([:admin, product]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.association :product_category, collection: ProductCategory.roots, as: :grouped_select, group_method: :children %>
+    <%= f.association :supplier, collection: Supplier.order(:name) %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :title_en, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_en, wrapper: :rich_editor %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :title_el, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_el, wrapper: :rich_editor %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :status, collection: Product.statuses.keys, label_method: :titleize %>
+    <%= f.input :published_on, include_blank: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save product" %>
+    <% if product.new_record? %>
+      <%= link_to "Cancel", admin_products_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_product_path(product), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

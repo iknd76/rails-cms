@@ -4,6 +4,7 @@ class Supplier < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search, against: %i[name website], using: { tsearch: { prefix: true } }
   has_one_attached :logo
+  has_many :products, dependent: :destroy
 
   validates :name, presence: true
   validates :website, presence: true, uri: true

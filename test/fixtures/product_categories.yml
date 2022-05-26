@@ -10,6 +10,7 @@ one_a:
   name_el: Category One A
   parent: one
   position: 1
+  products_count: 2
 
 one_b:
   slug: one-b
@@ -37,6 +38,7 @@ two_a:
   name_el: Category Two A
   parent: two
   position: 1
+  products_count: 1
 
 two_b:
   slug: two-b

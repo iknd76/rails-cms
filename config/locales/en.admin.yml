@@ -40,6 +40,14 @@ en:
       update:
         success: 'Category was successfully updated.'
 
+    products:
+      create:
+        success: 'Product was successfully created.'
+      destroy:
+        success: 'Product was successfully deleted.'
+      update:
+        success: 'Product was successfully updated.'
+
     profiles:
       update:
         success: 'Your profile was successfully updated.'

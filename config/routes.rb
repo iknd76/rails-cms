@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :product_categories
     resources :suppliers
+    resources :products
     resources :activities, only: %i[index]
     resources :users
     resources :sortables, only: %i[create]

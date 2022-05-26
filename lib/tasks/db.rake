@@ -5,7 +5,7 @@ namespace :db do
   task populate: :environment do
     raise "Should not be executed on #{Rails.env} environment" unless Rails.env.development?
 
-    %w[activities users article_categories articles pages snippets suppliers product_categories].each do |table_name|
+    %w[activities users article_categories articles pages snippets suppliers product_categories products].each do |table_name|
       ApplicationRecord.connection.execute("TRUNCATE #{table_name} CASCADE")
     end
 
@@ -113,6 +113,27 @@ namespace :db do
       name = Faker::Company.name
       website = "https://www.#{name.parameterize}.com"
       Supplier.create(name:, website:)
+      progressbar.increment
+    end
+
+    # Create some products
+    progressbar = ProgressBar.create(title: "Products", total: 188, format: progressbar_format, length: 80, progress_mark: ".")
+    supplier_ids = Supplier.ids
+    product_category_ids = ProductCategory.where.not(parent_id: nil).ids
+    188.times do
+      title = Faker::Commerce.product_name
+      status = rand(100) < 30 ? "draft" : "published"
+      Product.create(
+        product_category_id: product_category_ids.sample,
+        supplier_id: supplier_ids.sample,
+        title_en: title,
+        title_el: title,
+        body_en: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+        body_el: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+        tags: Faker::Lorem.words,
+        status:,
+        published_on: status == "draft" ? nil : Faker::Date.backward(days: 365)
+      )
       progressbar.increment
     end
   end
