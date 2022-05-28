@@ -7,7 +7,7 @@
 <%= show_for @page do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-stone prose-sm">
+    <div class="prose prose-stone prose-sm dark:prose-invert">
       <%= markdown(@page.body_en) %>
     </div>
   <% end %>
@@ -15,7 +15,7 @@
   <%= s.attribute :keywords_en %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-stone prose-sm">
+    <div class="prose prose-stone prose-sm dark:prose-invert">
       <%= markdown(@page.body_el) %>
     </div>
   <% end %>

@@ -12,7 +12,7 @@ class ProductCategory < ApplicationRecord
   validates :slug, presence: true, uniqueness: true, slug: true
   validate :parent_assignment
 
-  scope :roots, -> { where(parent_id: nil).order(:position) }
+  scope :roots, -> { where(parent_id: nil).includes(:children).order(:position) }
 
   def root?
     parent_id.blank?

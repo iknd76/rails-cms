@@ -1,55 +1,60 @@
-<header class="page-header">
+<header class="page-header border-0">
   <h1><%= title "Dashboard" %></h1>
 </header>
 
 <div class="grid sm:grid-cols-3 gap-4">
-  <div>
-    <div class="py-3 border-b border-stone-200">
-      <h2 class="text-sm font-medium text-stone-900">Content</h2>
-    </div>
-    <ul class="text-sm">
-      <li class="py-3 border-b border-stone-200">
-        📜 <%= link_to "Pages", admin_pages_path, class: "link" %>
+  <div class="sm:col-span-2 grid sm:grid-cols-2 gap-4">
+    <ul class="text-sm border-y divide-y divide-neutral-200 dark:divide-neutral-800">
+      <li><h2 class="py-3 text-base">Content</h2></li>
+      <li>
+        <%= link_to "Pages", admin_pages_path, class: "link block py-3" %>
       </li>
-      <li class="py-3 border-b border-stone-200">
-        ✂️ <%= link_to "Snippets", admin_snippets_path, class: "link" %>
+      <li>
+        <%= link_to "Snippets", admin_snippets_path, class: "link block py-3" %>
       </li>
-      <li class="py-3 border-b border-stone-200">
-        🗂 <%= link_to "Article categories", admin_article_categories_path, class: "link" %>
+      <li>
+        <%= link_to "Article categories", admin_article_categories_path, class: "link block py-3" %>
       </li>
-      <li class="py-3 border-b border-stone-200">
-        📝 <%= link_to "Articles", admin_articles_path, class: "link" %>
+      <li>
+        <%= link_to "Articles", admin_articles_path, class: "link block py-3" %>
+      </li>
+    </ul>
+
+    <ul class="text-sm divide-y divide-neutral-200 dark:divide-neutral-800">
+      <li><h2 class="py-3 text-base">Business</h2></li>
+      <li>
+        <%= link_to "Suppliers", admin_suppliers_path, class: "link block py-3" %>
+      </li>
+      <li>
+        <%= link_to "Product categories", admin_product_categories_path, class: "link block py-3" %>
+      </li>
+      <li>
+        <%= link_to "Products", admin_products_path, class: "link block py-3" %>
+      </li>
+    </ul>
+
+    <ul class="text-sm divide-y divide-neutral-200 dark:divide-neutral-800">
+      <li><h2 class="py-3 text-base">Advanced</h2></li>
+      <li>
+        <%= link_to "Activities", admin_activities_path, class: "link block py-3" %>
+      </li>
+      <li>
+        <%= link_to "Users", admin_users_path, class: "link block py-3" %>
       </li>
     </ul>
   </div>
 
   <div>
-    <div class="py-3 border-b border-stone-200">
-      <h2 class="text-sm font-medium text-stone-900">Business</h2>
-    </div>
-    <ul class="text-sm">
-      <li class="py-3 border-b border-stone-200">
-        🏭 <%= link_to "Suppliers", admin_suppliers_path, class: "link" %>
+    <ul class="text-sm bg-indigo-50 border border-indigo-100 rounded-lg divide-y divide-indigo-100">
+      <li><h2 class="p-3 text-base"><%= Current.user.name %></h2></li>
+      <li>
+        <%= link_to "Edit your profile", admin_profile_path, class: "link block p-3" %>
       </li>
-      <li class="py-3 border-b border-stone-200">
-        🗂 <%= link_to "Product categories", admin_product_categories_path, class: "link" %>
+      <li>
+        <%= link_to "Contact administrator", admin_profile_path, class: "link block p-3" %>
       </li>
-      <li class="py-3 border-b border-stone-200">
-        📦 <%= link_to "Products", admin_products_path, class: "link" %>
-      </li>
-    </ul>
-  </div>
-
-  <div>
-    <div class="py-3 border-b border-stone-200">
-      <h2 class="text-sm font-medium text-stone-900">Advanced</h2>
-    </div>
-    <ul class="text-sm">
-      <li class="py-3 border-b border-stone-200">
-        📓 <%= link_to "Activities", admin_activities_path, class: "link" %>
-      </li>
-      <li class="py-3 border-b border-stone-200">
-        🧑🏻‍💻 <%= link_to "Users", admin_users_path, class: "link" %>
+      <li>
+        <%= link_to "Log out", logout_path, class: "link block p-3" %>
       </li>
     </ul>
   </div>

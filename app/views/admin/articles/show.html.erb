@@ -7,7 +7,7 @@
 <%= show_for @article do |s| %>
   <%= s.attribute :title %>
   <%= s.attribute :body do %>
-    <div class="prose prose-stone prose-sm">
+    <div class="prose prose-stone prose-sm dark:prose-invert">
       <%= markdown(@article.body) %>
     </div>
   <% end %>

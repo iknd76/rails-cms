@@ -1,12 +1,14 @@
 <%= content_tag :li, id: dom_id(activity), class: dom_class(activity) do %>
-  <div class="flex items-center py-3 border-b border-stone-200">
-    <%= emoji_for(activity.action) %>
+  <div class="flex items-center py-3 border-b border-neutral-200 dark:border-neutral-800">
+    <svg class="h-6 w-6 text-neutral-500">
+      <use xlink:href="#<%= activity.action %>" />
+    </svg>
 
-    <p class="ml-2 text-sm">
+    <p class="ml-3 text-sm">
       <%= full_activity_summary(activity) %>
     </p>
 
-    <span class="ml-auto text-sm text-stone-500">
+    <span class="ml-auto text-sm text-neutral-500 italic">
       <%= local_time_ago(activity.created_at) %>
     </span>
   </div>

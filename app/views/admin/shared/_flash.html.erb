@@ -1,5 +1,5 @@
 <section class="fixed z-50 inset-0 flex flex-col items-center gap-2 p-2 pointer-events-none">
-  <% flash.each do |_level, message| %>
-    <%= content_tag :output, message, class: "py-3 px-4 text-sm font-medium text-white bg-black/90 rounded-md pointer-events-auto", data: { controller: "flash" } %>
+  <% flash.each do |level, message| %>
+    <%= content_tag :output, message, class: "flash flash-#{level}", data: { controller: "flash" } %>
   <% end %>
 </section>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="<%= I18n.locale %>" dir="ltr" class="bg-stone-100">
+<html lang="<%= I18n.locale %>" dir="ltr" class="bg-neutral-100 dark:bg-neutral-900">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark">
     <%= display_meta_tags site: "Experiment", noindex: true, nofollow: true, noarchive: true %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,14 +12,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="min-h-screen flex justify-center p-4 sm:p-8 text-stone-700 bg-stone-100">
+  <body class="min-h-screen flex justify-center p-4 sm:p-8 text-neutral-700 bg-neutral-100 dark:text-neutral-300 dark:bg-neutral-900">
     <%= render "admin/shared/flash" %>
 
-    <main class="w-full max-w-5xl p-4 sm:p-8 bg-white ring-1 ring-stone-200 rounded-lg shadow-sm">
-      <div class="flex items-center justify-between mb-8">
-        <%= render "admin/shared/breadcrumbs" %>
-        <%= render "admin/shared/current_user" %>
-      </div>
+    <main class="card max-w-5xl">
+      <%= render "admin/shared/breadcrumbs" %>
       <%= yield %>
     </main>
   </body>

@@ -7,6 +7,7 @@ module Admin
 
     def index
       articles = Article.
+                 includes(:article_category).
                  matching(params[:query]).
                  in_category(params[:category_id]).
                  with_status(params[:status]).

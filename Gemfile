@@ -79,6 +79,9 @@ group :development do
 
   # Terminal progress bars
   gem "ruby-progressbar", "~> 1.11"
+
+  # Discover N+1 queries
+  gem "bullet", "~> 7.0"
 end
 
 group :test do

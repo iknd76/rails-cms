@@ -5,24 +5,33 @@
 h1,
 h2,
 h3 {
-  @apply text-stone-900;
+  @apply font-bold tracking-tight text-neutral-900 dark:text-white;
 }
 
 strong {
-  @apply font-medium text-stone-900;
+  @apply font-medium text-neutral-900 dark:text-white;
+}
+
+/* UI elements */
+.card {
+  @apply w-full p-4 sm:p-8 bg-white ring-1 ring-neutral-200 dark:bg-neutral-800/50 dark:ring-neutral-800 rounded-lg shadow-sm;
+}
+
+.empty-state {
+  @apply my-4 h-32 flex flex-col items-center justify-center text-sm text-neutral-500 border-4 border-dashed rounded-md border-neutral-200 dark:border-neutral-800;
 }
 
 /* Form elements */
 .field-label {
-  @apply mb-1 block text-sm font-medium text-stone-900;
+  @apply mb-1 block text-sm font-medium text-neutral-900 dark:text-white;
 }
 
 .field-input {
-  @apply block w-full sm:text-sm border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500;
+  @apply block w-full sm:text-sm bg-white border-neutral-300 dark:bg-neutral-900 dark:border-neutral-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:focus:ring-sky-500 dark:focus:border-sky-500;
 }
 
 .field-input:disabled {
-  @apply bg-stone-100;
+  @apply bg-neutral-100 dark:bg-neutral-800;
 }
 
 .field-input.date {
@@ -30,23 +39,23 @@ strong {
 }
 
 .field-input-invalid {
-  @apply border-rose-300 text-rose-900 placeholder-rose-300 focus:ring-rose-500 focus:border-rose-500;
+  @apply border-rose-300 dark:border-rose-700 text-rose-900 dark:text-rose-300 placeholder-rose-300 dark:placeholder-rose-700 focus:ring-rose-500 focus:border-rose-500;
 }
 
 .field-hint {
-  @apply mt-1 text-sm text-stone-500;
+  @apply mt-1 text-sm text-neutral-500;
 }
 
 .field-error {
-  @apply mt-1 text-sm text-rose-600;
+  @apply mt-1 text-sm text-rose-600 dark:text-rose-400;
 }
 
 .error-notification {
-  @apply py-3 text-sm font-medium text-rose-600 border-b border-stone-200;
+  @apply py-3 text-sm font-medium text-rose-600 dark:text-rose-400 border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .fieldset {
-  @apply grid sm:grid-cols-2 gap-4 py-6 border-b border-stone-200;
+  @apply grid sm:grid-cols-2 gap-4 py-6 border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .form-actions {
@@ -59,42 +68,47 @@ strong {
 }
 
 .btn-primary {
-  @apply border-transparent text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500;
+  @apply border-transparent text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 dark:text-black dark:bg-sky-400 dark:hover:bg-sky-200 dark:focus:ring-sky-500;
 }
 
 .btn-danger {
-  @apply border-transparent text-white bg-rose-600 hover:bg-rose-700 focus:ring-rose-500;
+  @apply border-transparent text-white bg-rose-600 hover:bg-rose-700 focus:ring-rose-500 dark:text-black dark:bg-rose-400 dark:hover:bg-rose-200;
 }
 
 .btn-primary:disabled,
 .btn-danger:disabled {
-  @apply bg-stone-600 hover:bg-stone-600;
+  @apply bg-neutral-600 hover:bg-neutral-600 dark:bg-neutral-400 dark:hover:bg-neutral-400;
 }
 
 .btn-secondary {
-  @apply border-stone-300 text-stone-700 bg-white hover:bg-stone-50 focus:ring-indigo-500;
+  @apply border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 bg-white hover:bg-neutral-50 dark:bg-neutral-900 dark:hover:bg-neutral-800 focus:ring-indigo-500 dark:focus:ring-sky-500;
 }
 
 .btn-secondary:disabled {
-  @apply text-stone-500;
+  @apply text-neutral-500;
 }
 
 /* Links */
 .link {
-  @apply font-medium text-indigo-600 hover:text-indigo-900;
+  @apply font-medium text-indigo-600 hover:text-indigo-900 dark:text-sky-400 dark:hover:text-sky-200;
 }
 
 .link-danger {
-  @apply text-rose-600 hover:text-rose-900;
+  @apply text-rose-600 hover:text-rose-900 dark:text-rose-400 dark:hover:text-rose-200;
+}
+
+/* Flash messages */
+.flash {
+  @apply py-3 px-4 text-sm font-medium text-white bg-black/90 dark:text-black dark:bg-white rounded-md pointer-events-auto;
 }
 
 /* Layout */
 .page-header {
-  @apply flex items-center pb-4 border-b border-stone-200;
+  @apply flex items-center pb-4 border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .page-header h1 {
-  @apply text-4xl font-bold tracking-tight text-stone-900;
+  @apply text-4xl;
 }
 
 /* Index tables */
@@ -103,11 +117,11 @@ strong {
 }
 
 .table-index tr {
-  @apply border-b border-stone-200;
+  @apply border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .th {
-  @apply p-3 text-sm font-medium text-left text-stone-900;
+  @apply p-3 text-sm font-medium text-left text-neutral-900 dark:text-white;
 }
 
 .th:first-child {
@@ -118,6 +132,7 @@ strong {
   @apply pr-0;
 }
 
+.th-num,
 .th-badge,
 .th-time,
 .th-actions {
@@ -136,12 +151,14 @@ strong {
   @apply pr-0;
 }
 
+.td-num,
 .td-badge,
 .td-time,
 .td-actions {
   @apply text-right;
 }
 
+.td-num,
 .td-time {
   @apply tabular-nums;
 }
@@ -151,7 +168,7 @@ strong {
 }
 
 .row-actions li + li {
-  @apply pl-2 border-l border-stone-300;
+  @apply pl-2 border-l border-neutral-300 dark:border-neutral-700;
 }
 
 /* Pagination */
@@ -160,20 +177,20 @@ strong {
 }
 
 .pagy-nav .disabled {
-  @apply text-stone-500;
+  @apply text-neutral-500;
 }
 
 .pagy-nav .active {
-  @apply py-0.5 px-3 font-medium text-white bg-indigo-600 rounded-full;
+  @apply py-0.5 px-3 font-medium text-white bg-indigo-600 dark:text-black dark:bg-sky-400 rounded-full;
 }
 
 /* Record details view */
 .dl-item {
-  @apply grid md:grid-cols-3 lg:grid-cols-4 gap-4 border-b border-stone-200;
+  @apply grid md:grid-cols-3 lg:grid-cols-4 gap-4 border-b border-neutral-200 dark:border-neutral-800;
 }
 
 .dl-label {
-  @apply py-4 text-sm font-medium text-stone-900;
+  @apply py-4 text-sm font-medium text-neutral-900 dark:text-white;
 }
 
 .dl-content {
@@ -181,38 +198,60 @@ strong {
 }
 
 .dl-content.blank {
-  @apply text-stone-500 italic;
+  @apply text-neutral-500 italic;
 }
 
 /* Rich text editor */
 .rich-editor-wrapper {
-  @apply border border-stone-300 rounded-md overflow-hidden shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500;
+  @apply border border-neutral-300 dark:border-neutral-700 rounded-md overflow-hidden shadow-sm focus-within:ring-1 focus-within:border-indigo-500 focus-within:ring-indigo-500 dark:focus-within:border-sky-500 dark:focus-within:ring-sky-500;
 }
 
 .rich-editor-wrapper > .CodeMirror {
-  @apply sm:text-sm text-stone-700 border-none;
+  @apply sm:text-sm bg-white text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 border-none;
 }
 
 .rich-editor-wrapper > .editor-toolbar {
-  @apply border-0 border-b border-stone-200 rounded-t-md;
+  @apply border-0 border-b border-neutral-200 dark:border-neutral-800 rounded-t-md;
+}
+
+.rich-editor-wrapper > .editor-toolbar a {
+  @apply text-neutral-700 dark:text-neutral-300 !important;
+}
+
+.rich-editor-wrapper > .editor-toolbar a.active,
+.rich-editor-wrapper > .editor-toolbar a:hover {
+  @apply bg-neutral-50 border-neutral-200 dark:bg-neutral-800 dark:border-neutral-700;
+}
+
+.rich-editor-wrapper > .editor-toolbar i.separator {
+  @apply border-l-0 border-neutral-300 dark:border-neutral-700;
 }
 
 /* Badges */
 .badge {
-  @apply inline-flex items-center px-2 py-0.5 rounded text-xs leading-none font-medium bg-stone-100 text-stone-900;
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs leading-none font-medium bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-white;
 }
 
 .badge-published,
 .badge-standard {
-  @apply bg-green-100 text-green-900;
+  @apply bg-green-100 text-green-900 dark:bg-green-800/50 dark:text-green-50;
 }
 
 .badge-banned {
-  @apply bg-rose-100 text-rose-900;
+  @apply bg-rose-100 text-rose-900 dark:bg-rose-800/50 dark:text-rose-50;
 }
 
 .badge-admin {
-  @apply bg-indigo-100 text-indigo-900;
+  @apply bg-indigo-100 text-indigo-900 dark:bg-indigo-800/50 dark:text-indigo-50;
+}
+
+/* Sortable lists */
+.sortable-chosen {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+.sortable-drag {
+  @apply bg-indigo-100 dark:bg-sky-800;
 }
 
 @tailwind utilities;

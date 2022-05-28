@@ -4,15 +4,15 @@
 </header>
 
 <%= form_with url: "", method: "get", data: { turbo_frame: "snippets", turbo_action: "advance", controller: "search" } do |f| %>
-  <div class="flex py-3 space-x-2 border-b border-stone-200">
+  <div class="flex py-3 space-x-2 border-b border-neutral-200 dark:border-neutral-800">
     <%= f.search_field :query, placeholder: "Search...", value: params[:query], class: "field-input", data: { action: "input->search#submit" } %>
   </div>
 <% end %>
 
 <%= turbo_frame_tag "snippets" do %>
   <% if @pagy.count.zero? %>
-    <div class="my-4 h-32 flex flex-col items-center justify-center border-4 border-dashed rounded-md border-stone-300">
-      <p class="text-sm text-stone-500">
+    <div class="my-4 h-32 flex flex-col items-center justify-center border-4 border-dashed rounded-md border-neutral-300">
+      <p class="text-sm text-neutral-500">
         No snippets were found.
         <%= link_to new_admin_snippet_path, class: "inline-flex link", data: { turbo_frame: "_top" } do %>
           <span>Add a new one</span>

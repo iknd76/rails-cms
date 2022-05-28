@@ -11,7 +11,7 @@
   <%= s.association :parent %>
   <%= s.attribute :products do %>
     <% if @product_category.products_count.zero? %>
-      <span class="text-stone-500 italic">No products associated with this category.</span>
+      <span class="text-neutral-500 italic">No products associated with this category.</span>
     <% else %>
       <%= link_to pluralize(@product_category.products_count, "product"), admin_products_path(category_id: @product_category.id), class: "link" %>
     <% end %>

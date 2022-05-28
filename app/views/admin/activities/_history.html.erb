@@ -1,15 +1,15 @@
-<ul class="-my-4 divide-y divide-stone-200">
+<ul class="-my-4 divide-y divide-neutral-200 dark:divide-neutral-800">
   <% Activity.history_for(trackable).each do |activity| %>
     <li class="flex items-center justify-between py-4">
       <p>
         <%= short_activity_summary(activity) %>
       </p>
-      <span class="text-stone-500">
+      <span class="text-neutral-500 italic">
         <%= local_time_ago(activity.created_at) %>
       </span>
     </li>
   <% end %>
   <li class="hidden only:flex py-4">
-    <div class="text-stone-500 italic">No activities found.</div>
+    <div class="text-neutral-500 italic">No activities found.</div>
   </li>
 </ul>

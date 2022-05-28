@@ -7,6 +7,7 @@ module Admin
 
     def index
       products = Product.
+                 includes(:product_category, :supplier).
                  matching(params[:query]).
                  in_category(params[:category_id]).
                  by_supplier(params[:supplier_id]).
