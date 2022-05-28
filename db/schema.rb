@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_070028) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_28_175907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -121,6 +121,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_070028) do
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end
 
+  create_table "project_categories", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "name_en", null: false
+    t.string "name_el", null: false
+    t.bigint "parent_id"
+    t.integer "position", default: 1, null: false
+    t.integer "projects_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_project_categories_on_slug", unique: true
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.bigint "project_category_id", null: false
+    t.string "title_en", null: false
+    t.string "title_el", null: false
+    t.text "body_en", null: false
+    t.text "body_el", null: false
+    t.string "tags", default: [], null: false, array: true
+    t.integer "status", null: false
+    t.date "published_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_category_id"], name: "index_projects_on_project_category_id"
+  end
+
   create_table "snippets", force: :cascade do |t|
     t.string "slug", null: false
     t.string "title_en", null: false
@@ -160,4 +186,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_070028) do
   add_foreign_key "articles", "article_categories"
   add_foreign_key "products", "product_categories"
   add_foreign_key "products", "suppliers"
+  add_foreign_key "projects", "project_categories"
 end

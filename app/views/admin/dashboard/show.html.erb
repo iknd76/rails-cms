@@ -4,7 +4,7 @@
 
 <div class="grid sm:grid-cols-3 gap-4">
   <div class="sm:col-span-2 grid sm:grid-cols-2 gap-4">
-    <ul class="text-sm border-y divide-y divide-neutral-200 dark:divide-neutral-800">
+    <ul class="text-sm divide-y divide-neutral-200 dark:divide-neutral-800">
       <li><h2 class="py-3 text-base">Content</h2></li>
       <li>
         <%= link_to "Pages", admin_pages_path, class: "link block py-3" %>
@@ -30,6 +30,12 @@
       </li>
       <li>
         <%= link_to "Products", admin_products_path, class: "link block py-3" %>
+      </li>
+      <li>
+        <%= link_to "Project categories", admin_project_categories_path, class: "link block py-3" %>
+      </li>
+      <li>
+        <%= link_to "Projects", admin_projects_path, class: "link block py-3" %>
       </li>
     </ul>
 

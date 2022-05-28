@@ -1,0 +1,33 @@
+
+<%= simple_form_for([:admin, project]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.association :project_category, collection: ProjectCategory.roots, as: :grouped_select, group_method: :children %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :title_en, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_en, wrapper: :rich_editor %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :title_el, wrapper_html: { class: "col-span-2" } %>
+    <%= f.input :body_el, wrapper: :rich_editor %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :status, collection: Project.statuses.keys, label_method: :titleize %>
+    <%= f.input :published_on, include_blank: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save project" %>
+    <% if project.new_record? %>
+      <%= link_to "Cancel", admin_projects_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_project_path(project), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

@@ -52,6 +52,22 @@ en:
       update:
         success: 'Your profile was successfully updated.'
 
+    project_categories:
+      create:
+        success: 'Category was successfully created.'
+      destroy:
+        success: 'Category was successfully deleted.'
+      update:
+        success: 'Category was successfully updated.'
+
+    projects:
+      create:
+        success: 'Project was successfully created.'
+      destroy:
+        success: 'Project was successfully deleted.'
+      update:
+        success: 'Project was successfully updated.'
+
     snippets:
       create:
         success: 'Snippet was successfully created.'

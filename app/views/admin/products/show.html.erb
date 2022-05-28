@@ -7,13 +7,13 @@
 <%= show_for @product do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-stone prose-sm dark:prose-invert">
+    <div class="prose prose-neutral prose-sm dark:prose-invert">
       <%= markdown(@product.body_en) %>
     </div>
   <% end %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-stone prose-sm dark:prose-invert">
+    <div class="prose prose-neutral prose-sm dark:prose-invert">
       <%= markdown(@product.body_el) %>
     </div>
   <% end %>

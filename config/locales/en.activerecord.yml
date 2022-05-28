@@ -22,6 +22,15 @@ en:
         name_en: 'English name'
         name_el: 'Greek name'
         parent_id: 'Parent category'
+      project:
+        title_en: 'English title'
+        title_el: 'Greek title'
+        body_en: 'English body'
+        body_el: 'Greek body'
+      project_category:
+        name_en: 'English name'
+        name_el: 'Greek name'
+        parent_id: 'Parent category'
       snippet:
         title_en: 'English title'
         title_el: 'Greek title'
@@ -34,7 +43,17 @@ en:
           attributes:
             product_category:
               root: 'must not be a top-level category'
+        project:
+          attributes:
+            project_category:
+              root: 'must not be a top-level category'
         product_category:
+          attributes:
+            parent_id:
+              assigned_children: 'cannot be set while having assigned children'
+              not_root: 'must be a root category'
+              not_self: 'must be a different category'
+        project_category:
           attributes:
             parent_id:
               assigned_children: 'cannot be set while having assigned children'

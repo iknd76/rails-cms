@@ -1,0 +1,24 @@
+
+<%= simple_form_for([:admin, @project_category]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="fieldset">
+    <%= f.input :slug %>
+    <%= f.input :parent_id, collection: @parent_categories, disabled: @project_category.children.any? %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :name_en %>
+    <%= f.input :name_el %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save category" %>
+    <% if project_category.new_record? %>
+      <%= link_to "Cancel", admin_project_categories_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Cancel", admin_project_category_path(project_category), class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+<% end %>

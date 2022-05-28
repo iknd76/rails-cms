@@ -1,0 +1,36 @@
+<header class="page-header">
+  <h1><%= title "Project details" %></h1>
+  <%= link_to "Edit project", edit_admin_project_path(@project), class: "ml-auto btn btn-primary" if policy(@project).update? %>
+  <%= button_to "Delete project", admin_project_path(@project), method: :delete, class: "ml-4 btn btn-danger", form: { data: { turbo_confirm: "Are you sure you want to delete this project?" } } if policy(@project).destroy? %>
+</header>
+
+<%= show_for @project do |s| %>
+  <%= s.attribute :title_en %>
+  <%= s.attribute :body_en do %>
+    <div class="prose prose-neutral prose-sm dark:prose-invert">
+      <%= markdown(@project.body_en) %>
+    </div>
+  <% end %>
+  <%= s.attribute :title_el %>
+  <%= s.attribute :body_el do %>
+    <div class="prose prose-neutral prose-sm dark:prose-invert">
+      <%= markdown(@project.body_el) %>
+    </div>
+  <% end %>
+  <%= s.attribute :project_category do %>
+    <%= link_to @project.project_category, admin_project_category_path(@project.project_category), class: "link" %>
+  <% end %>
+  <%= s.attribute :status do %>
+    <%= badge_for @project.status %>
+  <% end %>
+  <%= s.attribute :published_on %>
+  <%= s.attribute :created_at do %>
+    <%= local_time(@project.created_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :updated_at do %>
+    <%= local_time(@project.updated_at, format: :long) %>
+  <% end %>
+  <%= s.attribute :history do %>
+    <%= render "admin/activities/history", trackable: @project %>
+  <% end %>
+<% end %>

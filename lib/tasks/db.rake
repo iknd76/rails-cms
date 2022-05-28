@@ -5,7 +5,7 @@ namespace :db do
   task populate: :environment do
     raise "Should not be executed on #{Rails.env} environment" unless Rails.env.development?
 
-    %w[activities users article_categories articles pages snippets suppliers product_categories products].each do |table_name|
+    %w[activities users article_categories articles pages snippets suppliers product_categories products project_categories projects].each do |table_name|
       ApplicationRecord.connection.execute("TRUNCATE #{table_name} CASCADE")
     end
 
@@ -126,6 +126,42 @@ namespace :db do
       Product.create(
         product_category_id: product_category_ids.sample,
         supplier_id: supplier_ids.sample,
+        title_en: title,
+        title_el: title,
+        body_en: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+        body_el: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+        tags: Faker::Lorem.words,
+        status:,
+        published_on: status == "draft" ? nil : Faker::Date.backward(days: 365)
+      )
+      progressbar.increment
+    end
+
+    # Create some project categories
+    progressbar = ProgressBar.create(title: "Project categories", total: 18, format: progressbar_format, length: 80, progress_mark: ".")
+    5.times do
+      name = Faker::Commerce.department
+      slug = name.parameterize
+      ProjectCategory.create(slug:, name_en: name, name_el: name)
+      progressbar.increment
+    end
+
+    root_ids = ProjectCategory.roots.ids
+    13.times do
+      name = Faker::Commerce.department
+      slug = name.parameterize
+      ProjectCategory.create(slug:, name_en: name, name_el: name, parent_id: root_ids.sample)
+      progressbar.increment
+    end
+
+    # Create some projects
+    progressbar = ProgressBar.create(title: "Projects", total: 123, format: progressbar_format, length: 80, progress_mark: ".")
+    project_category_ids = ProjectCategory.where.not(parent_id: nil).ids
+    123.times do
+      title = Faker::App.name
+      status = rand(100) < 30 ? "draft" : "published"
+      Project.create(
+        project_category_id: project_category_ids.sample,
         title_en: title,
         title_el: title,
         body_en: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
