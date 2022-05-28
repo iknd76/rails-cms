@@ -40,6 +40,50 @@ class ProjectTest < ActiveSupport::TestCase
     assert_includes project.errors[:body_el], "can't be blank"
   end
 
+  test "lat must be present" do
+    project = Project.new(lat: nil)
+    project.validate
+    assert_includes project.errors[:lat], "can't be blank"
+  end
+
+  test "lat must be a number" do
+    project = Project.new(lat: "not a number")
+    project.validate
+    assert_includes project.errors[:lat], "is not a number"
+  end
+
+  test "lat must be between -90 and 90" do
+    project = Project.new(lat: -91)
+    project.validate
+    assert_includes project.errors[:lat], "must be greater than or equal to -90"
+
+    project.lat = 91
+    project.validate
+    assert_includes project.errors[:lat], "must be less than or equal to 90"
+  end
+
+  test "lng must be present" do
+    project = Project.new(lng: nil)
+    project.validate
+    assert_includes project.errors[:lng], "can't be blank"
+  end
+
+  test "lng must be a number" do
+    project = Project.new(lng: "not a number")
+    project.validate
+    assert_includes project.errors[:lng], "is not a number"
+  end
+
+  test "lng must be between -180 and 180" do
+    project = Project.new(lng: -181)
+    project.validate
+    assert_includes project.errors[:lng], "must be greater than or equal to -180"
+
+    project.lng = 181
+    project.validate
+    assert_includes project.errors[:lng], "must be less than or equal to 180"
+  end
+
   test "status must be present" do
     project = Project.new(status: "")
     project.validate

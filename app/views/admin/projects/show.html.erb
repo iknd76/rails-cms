@@ -20,6 +20,8 @@
   <%= s.attribute :project_category do %>
     <%= link_to @project.project_category, admin_project_category_path(@project.project_category), class: "link" %>
   <% end %>
+  <%= s.attribute :lat %>
+  <%= s.attribute :lng %>
   <%= s.attribute :status do %>
     <%= badge_for @project.status %>
   <% end %>

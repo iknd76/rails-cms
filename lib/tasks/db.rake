@@ -166,6 +166,8 @@ namespace :db do
         title_el: title,
         body_en: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
         body_el: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4),
+        lat: Faker::Address.latitude,
+        lng: Faker::Address.longitude,
         tags: Faker::Lorem.words,
         status:,
         published_on: status == "draft" ? nil : Faker::Date.backward(days: 365)

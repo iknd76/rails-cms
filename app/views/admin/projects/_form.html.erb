@@ -17,6 +17,15 @@
     <%= f.input :body_el, wrapper: :rich_editor %>
   </div>
 
+  <div class="fieldset" data-controller="coordinates" data-coordinates-key-value="<%= Rails.application.credentials.google_maps_api_key %>">
+    <%= f.input :lat, readonly: true, input_html: { data: { coordinates_target: "lat" } } %>
+    <%= f.input :lng, readonly: true, input_html: { data: { coordinates_target: "lng" } } %>
+    <div class="col-span-2">
+      <div class="map-wrapper" data-coordinates-target="map"></div>
+      <p class="field-hint mt-1">Drag the marker to the location of the project.</p>
+    </div>
+  </div>
+
   <div class="fieldset">
     <%= f.input :status, collection: Project.statuses.keys, label_method: :titleize %>
     <%= f.input :published_on, include_blank: true %>

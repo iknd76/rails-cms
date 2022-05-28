@@ -4,6 +4,8 @@ one:
   title_el: Sleek Bronze Bench
   body_en: Soleo civis autem. Sunt cariosus crur. Antea utique error. Beneficium stabilis cresco.
   body_el: Deserunt aut quo. Absum cibus et.
+  lat: 23
+  lng: 42
   status: published
   published_on: 2022-05-23
 
@@ -13,6 +15,8 @@ two:
   title_el: Ergonomic Leather Clock
   body_en: Spes thesaurus audeo. Contabesco nemo condico.
   body_el: Adsuesco omnis culpa. Demergo universe aggredior. Eligendi arceo crepusculum.
+  lat: 23
+  lng: 42
   status: draft
 
 three:
@@ -21,4 +25,6 @@ three:
   title_el: Gorgeous Leather Car
   body_en: Thymbra cuppedia volaticus. Utor caterva vetus. Volutabrum curatio speculum. Vulticulus absens sollicito.
   body_el: Audio defaeco tutamen. Correptius tergum fugit. Solium ocer conicio. Supplanto decor culpo. Crur annus corroboro. Cogito arbustum aut. Consequuntur accipio arma.
+  lat: 23
+  lng: 42
   status: draft

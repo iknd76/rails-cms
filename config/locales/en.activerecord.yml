@@ -27,6 +27,8 @@ en:
         title_el: 'Greek title'
         body_en: 'English body'
         body_el: 'Greek body'
+        lat: 'Latitude'
+        lng: 'Longitude'
       project_category:
         name_en: 'English name'
         name_el: 'Greek name'

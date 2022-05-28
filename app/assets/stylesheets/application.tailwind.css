@@ -21,6 +21,12 @@ strong {
   @apply my-4 h-32 flex flex-col items-center justify-center text-sm text-neutral-500 border-4 border-dashed rounded-md border-neutral-200 dark:border-neutral-800;
 }
 
+.map-wrapper {
+  @apply rounded-md overflow-hidden;
+  height: 50vh;
+  min-height: 20rem;
+}
+
 /* Form elements */
 .field-label {
   @apply mb-1 block text-sm font-medium text-neutral-900 dark:text-white;
@@ -229,7 +235,7 @@ strong {
 
 /* Badges */
 .badge {
-  @apply inline-flex items-center px-2 py-0.5 rounded text-xs leading-none font-medium bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-white;
+  @apply inline-flex items-center px-2 py-0.5 rounded text-xs leading-none font-medium bg-neutral-200 text-neutral-900 dark:bg-neutral-700 dark:text-white;
 }
 
 .badge-published,

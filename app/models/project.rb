@@ -13,6 +13,8 @@ class Project < ApplicationRecord
   validates :title_el, presence: true
   validates :body_en, presence: true
   validates :body_el, presence: true
+  validates :lat, presence: true, numericality: { greater_than_or_equal_to: -90, less_than_or_equal_to: 90 }
+  validates :lng, presence: true, numericality: { greater_than_or_equal_to: -180, less_than_or_equal_to: 180 }
   validates :status, presence: true
   validate :project_category_level
 

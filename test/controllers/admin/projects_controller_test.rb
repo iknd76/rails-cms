@@ -97,6 +97,8 @@ module Admin
         title_el: "Test Project",
         body_en: "Test Project Body",
         body_el: "Test Project Body",
+        lat: 38.011169,
+        lng: 23.830884,
         status: "published"
       )
     end

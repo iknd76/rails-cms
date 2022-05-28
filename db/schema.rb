@@ -139,6 +139,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_175907) do
     t.string "title_el", null: false
     t.text "body_en", null: false
     t.text "body_el", null: false
+    t.decimal "lat", precision: 10, scale: 6, null: false
+    t.decimal "lng", precision: 10, scale: 6, null: false
     t.string "tags", default: [], null: false, array: true
     t.integer "status", null: false
     t.date "published_on"
