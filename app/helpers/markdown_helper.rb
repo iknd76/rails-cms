@@ -18,6 +18,6 @@ module MarkdownHelper
   )
 
   def markdown(text)
-    MARKDOWN.render(text).html_safe
+    content_tag :div, MARKDOWN.render(text).html_safe, class: "prose prose-neutral prose-sm dark:prose-invert"
   end
 end

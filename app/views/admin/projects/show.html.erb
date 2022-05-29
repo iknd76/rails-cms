@@ -7,15 +7,11 @@
 <%= show_for @project do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@project.body_en) %>
-    </div>
+    <%= markdown @project.body_en %>
   <% end %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@project.body_el) %>
-    </div>
+    <%= markdown @project.body_el %>
   <% end %>
   <%= s.attribute :project_category do %>
     <%= link_to @project.project_category, admin_project_category_path(@project.project_category), class: "link" %>
@@ -27,10 +23,10 @@
   <% end %>
   <%= s.attribute :published_on %>
   <%= s.attribute :created_at do %>
-    <%= local_time(@project.created_at, format: :long) %>
+    <%= local_time @project.created_at, format: :long %>
   <% end %>
   <%= s.attribute :updated_at do %>
-    <%= local_time(@project.updated_at, format: :long) %>
+    <%= local_time @project.updated_at, format: :long %>
   <% end %>
   <%= s.attribute :history do %>
     <%= render "admin/activities/history", trackable: @project %>

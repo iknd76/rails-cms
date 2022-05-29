@@ -7,25 +7,21 @@
 <%= show_for @page do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@page.body_en) %>
-    </div>
+    <%= markdown @page.body_en %>
   <% end %>
   <%= s.attribute :description_en %>
   <%= s.attribute :keywords_en %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@page.body_el) %>
-    </div>
+    <%= markdown @page.body_el %>
   <% end %>
   <%= s.attribute :description_el %>
   <%= s.attribute :keywords_el %>
   <%= s.attribute :created_at do %>
-    <%= local_time(@page.created_at, format: :long) %>
+    <%= local_time @page.created_at, format: :long %>
   <% end %>
   <%= s.attribute :updated_at do %>
-    <%= local_time(@page.updated_at, format: :long) %>
+    <%= local_time @page.updated_at, format: :long %>
   <% end %>
   <%= s.attribute :history do %>
     <%= render "admin/activities/history", trackable: @page %>

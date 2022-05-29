@@ -23,6 +23,10 @@
     <%= f.input :published_on, include_blank: true %>
   </div>
 
+  <div class="fieldset">
+    <%= f.input :images, input_html: { multiple: true } %>
+  </div>
+
   <div class="form-actions">
     <%= f.button :submit, "Save product" %>
     <% if product.new_record? %>

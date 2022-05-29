@@ -7,15 +7,14 @@
 <%= show_for @product do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@product.body_en) %>
-    </div>
+    <%= markdown @product.body_en %>
   <% end %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@product.body_el) %>
-    </div>
+    <%= markdown @product.body_el %>
+  <% end %>
+  <%= s.attribute :images do %>
+    <%= sortable_thumbnails_for @product %>
   <% end %>
   <%= s.attribute :product_category do %>
     <%= link_to @product.product_category, admin_product_category_path(@product.product_category), class: "link" %>
@@ -28,10 +27,10 @@
   <% end %>
   <%= s.attribute :published_on %>
   <%= s.attribute :created_at do %>
-    <%= local_time(@product.created_at, format: :long) %>
+    <%= local_time @product.created_at, format: :long %>
   <% end %>
   <%= s.attribute :updated_at do %>
-    <%= local_time(@product.updated_at, format: :long) %>
+    <%= local_time @product.updated_at, format: :long %>
   <% end %>
   <%= s.attribute :history do %>
     <%= render "admin/activities/history", trackable: @product %>

@@ -7,21 +7,17 @@
 <%= show_for @snippet do |s| %>
   <%= s.attribute :title_en %>
   <%= s.attribute :body_en do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@snippet.body_en) %>
-    </div>
+    <%= markdown @snippet.body_en %>
   <% end %>
   <%= s.attribute :title_el %>
   <%= s.attribute :body_el do %>
-    <div class="prose prose-neutral prose-sm dark:prose-invert">
-      <%= markdown(@snippet.body_el) %>
-    </div>
+    <%= markdown @snippet.body_el %>
   <% end %>
   <%= s.attribute :created_at do %>
-    <%= local_time(@snippet.created_at, format: :long) %>
+    <%= local_time @snippet.created_at, format: :long %>
   <% end %>
   <%= s.attribute :updated_at do %>
-    <%= local_time(@snippet.updated_at, format: :long) %>
+    <%= local_time @snippet.updated_at, format: :long %>
   <% end %>
   <%= s.attribute :history do %>
     <%= render "admin/activities/history", trackable: @snippet %>

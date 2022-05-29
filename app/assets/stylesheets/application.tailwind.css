@@ -256,8 +256,4 @@ strong {
   @apply bg-neutral-100 dark:bg-neutral-800;
 }
 
-.sortable-drag {
-  @apply bg-indigo-100 dark:bg-sky-800;
-}
-
 @tailwind utilities;

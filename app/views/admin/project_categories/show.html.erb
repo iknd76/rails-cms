@@ -17,10 +17,10 @@
     <% end %>
   <% end %>
   <%= s.attribute :created_at do %>
-    <%= local_time(@project_category.created_at, format: :long) %>
+    <%= local_time @project_category.created_at, format: :long %>
   <% end %>
   <%= s.attribute :updated_at do %>
-    <%= local_time(@project_category.updated_at, format: :long) %>
+    <%= local_time @project_category.updated_at, format: :long %>
   <% end %>
   <%= s.attribute :history do %>
     <%= render "admin/activities/history", trackable: @project_category %>

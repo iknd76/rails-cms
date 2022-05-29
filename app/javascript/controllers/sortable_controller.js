@@ -15,8 +15,6 @@ export default class extends Controller {
       this.sortables.push(
         new Sortable(list, {
           onEnd: this.onEnd.bind(this),
-          chosenClass: 'sortable-chosen',
-          dragClass: 'sortable-drag',
         })
       )
     })
