@@ -1,4 +1,14 @@
 en:
   locales:
-    en: 'English'
     el: 'Greek'
+    en: 'English'
+  switch_locale:
+    el: 'Αλλαγή σε Ελληνικά'
+    en: 'Switch to English'
+
+  articles:
+    index:
+      articles: 'Our latest news'
+    article:
+      in_category: 'in category'
+      published: 'Published on'

@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  # Auth routes
   get "/login", to: "auth/sessions#new", as: "login"
   post "/login", to: "auth/sessions#create"
   get "/logout", to: "auth/sessions#destroy", as: "logout"
 
+  # Admin routes
   namespace :admin do
     resources :pages
     resources :snippets
@@ -22,5 +24,10 @@ Rails.application.routes.draw do
     root "dashboard#show"
   end
 
+  # Public routes
+  scope "(:locale)", locale: /en|el/ do
+    resources :articles, only: [:index]
+  end
+  get "/:locale", to: "home#show", as: "home"
   root "home#show"
 end
