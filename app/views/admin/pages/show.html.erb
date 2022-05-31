@@ -17,6 +17,9 @@
   <% end %>
   <%= s.attribute :description_el %>
   <%= s.attribute :keywords_el %>
+  <%= s.attribute :images do %>
+    <%= sortable_thumbnails_for @page %>
+  <% end %>
   <%= s.attribute :created_at do %>
     <%= local_time @page.created_at, format: :long %>
   <% end %>

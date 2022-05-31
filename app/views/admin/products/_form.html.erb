@@ -18,9 +18,9 @@
     <%= f.input :body_el, wrapper: :rich_editor %>
   </div>
 
-  <div class="fieldset">
-    <%= f.input :status, collection: Product.statuses.keys, label_method: :titleize %>
-    <%= f.input :published_on, include_blank: true %>
+  <div class="fieldset" data-controller="publication" data-publication-control-value="published">
+    <%= f.input :status, collection: Article.statuses.keys, label_method: :titleize, input_html: { data: { action: "change->publication#toggleDateFields" } } %>
+    <%= f.input :published_on, include_blank: true, wrapper_html: { class: ("hidden" unless f.object.published?), data: { publication_target: "dateFields" } } %>
   </div>
 
   <div class="fieldset">

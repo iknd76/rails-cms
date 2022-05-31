@@ -13,6 +13,9 @@ application.register('flash', FlashController)
 import HelloController from './hello_controller.js'
 application.register('hello', HelloController)
 
+import PublicationController from './publication_controller.js'
+application.register('publication', PublicationController)
+
 import RichEditorController from './rich_editor_controller.js'
 application.register('rich-editor', RichEditorController)
 

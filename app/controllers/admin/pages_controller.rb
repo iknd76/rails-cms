@@ -60,7 +60,7 @@ module Admin
     end
 
     def page_params
-      params.require(:page).permit(:slug, :title_en, :title_el, :body_en, :body_el, :description_en, :description_el, :keywords_en, :keywords_el)
+      params.require(:page).permit(:slug, :title_en, :title_el, :body_en, :body_el, :description_en, :description_el, :keywords_en, :keywords_el, images: [])
     end
   end
 end

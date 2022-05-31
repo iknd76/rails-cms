@@ -6,10 +6,20 @@
   <div class="fieldset">
     <%= f.association :article_category %>
     <%= f.input :locale, collection: [%w[English en], %w[Greek el]] %>
+  </div>
+
+  <div class="fieldset">
     <%= f.input :title, wrapper_html: { class: "col-span-2" } %>
     <%= f.input :body, wrapper: :rich_editor %>
-    <%= f.input :status, collection: Article.statuses.keys, label_method: :titleize %>
-    <%= f.input :published_on, include_blank: true %>
+  </div>
+
+  <div class="fieldset" data-controller="publication" data-publication-control-value="published">
+    <%= f.input :status, collection: Article.statuses.keys, label_method: :titleize, input_html: { data: { action: "change->publication#toggleDateFields" } } %>
+    <%= f.input :published_on, include_blank: true, wrapper_html: { class: ("hidden" unless f.object.published?), data: { publication_target: "dateFields" } } %>
+  </div>
+
+  <div class="fieldset">
+    <%= f.input :images, input_html: { multiple: true } %>
   </div>
 
   <div class="form-actions">

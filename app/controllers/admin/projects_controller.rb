@@ -65,7 +65,7 @@ module Admin
     end
 
     def project_params
-      params.require(:project).permit(:project_category_id, :title_en, :title_el, :body_en, :body_el, :lat, :lng, :status, :published_on)
+      params.require(:project).permit(:project_category_id, :title_en, :title_el, :body_en, :body_el, :lat, :lng, :status, :published_on, images: [])
     end
   end
 end

@@ -4,6 +4,9 @@ class Article < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search, against: %i[title body tags], using: { tsearch: { prefix: true } }
   belongs_to :article_category, counter_cache: true
+  has_many_attached :images do |attachable|
+    attachable.variant :thumb, resize_to_limit: [96, 96]
+  end
   enum status: { draft: 0, published: 1 }
 
   before_validation :set_published_on
